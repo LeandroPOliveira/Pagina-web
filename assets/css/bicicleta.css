@@ -1,0 +1,152 @@
+header {
+    align-items: center;
+    background: cornflowerblue;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: left;
+    color: black;
+    font-size: 25px;
+}
+
+.menu-lista {
+    display: flex;
+    padding: 20px;
+}
+
+.menu-link {
+    color: black;
+    margin-right: 1.25rem;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+.imagem-cabecalho {
+    width: 10%;
+}
+
+.banner {
+    position: relative;
+}
+
+.banner__imagem {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.banner__titulo {
+    color: #fdfdfd;
+    font-family: Pacifico, cursive;
+    font-size: 5.0625rem;
+    position: absolute;
+    left: 70%;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color : lightgray;
+}
+
+.sobre__titulo {
+    color: #8d0606;
+    font-family: Pacifico, cursive;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 1em;
+
+}
+
+.sobre {
+    font-weight: bold;
+    margin: 0 auto;
+    width: 940px;
+}
+
+.sobre p {
+    width: 940px;
+    margin: 0 0 1em;    
+}
+
+.mapa-conteudo {
+    width: 940px;
+    margin: 0 auto
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+
+.topo {
+    position: relative;
+}
+
+#bike {
+    width: 10%   
+}
+
+.marcas {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+}
+
+.marcas li {
+    display: inline;
+    margin: 0 0 0 25px;
+    font-size: 24px;
+}
+
+.produtos {
+    width: 1240px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.produtos h2 {
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.produtos li {
+    display: inline-block;
+    width: 38%;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 5%; 
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background: white;
+}
+
+.produtos p {
+    font-size: 20px;
+}
+
+
+.models {
+    width: 100%;
+    
+}
+
+
+
+
+
