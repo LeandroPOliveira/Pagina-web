@@ -21,15 +21,66 @@ h1 {
     color: black;
     margin-right: 1.25rem;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .menu-link:hover {
     text-decoration: underline;
 }
 
+@media screen and (min-width: 0) {
+    .header {
+        justify-content: center;
+        padding: 0 1 rem;
+    }
+} 
+
+@media screen and (min-width: 768px) {
+    .header {
+        padding: 0 5rem;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 0) {
+    .imagem-cabecalho {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .imagem-cabecalho {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 0) {
+    .banner__titulo {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner__titulo {
+        font-size: 5.0625rem;
+    }
+}
+
+@media screen and (min-width: 0) {
+    .banner__imagem {
+        height: calc(100vh - 51px);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner__imagem {
+        height: calc(100vh - 72px);    
+    }
+}
+
+
 .imagem-cabecalho {
-    width: 10%;
+    width: 5%;
 }
 
 .banner {
@@ -45,7 +96,6 @@ h1 {
 .banner__titulo {
     color: #fdfdfd;
     font-family: Pacifico, cursive;
-    font-size: 5.0625rem;
     position: absolute;
     left: 70%;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
@@ -69,6 +119,8 @@ body {
     margin: 0 0 1em;
 
 }
+
+
 
 .sobre {
     font-weight: bold;
@@ -146,7 +198,66 @@ body {
     
 }
 
+.quem-somos {
+    text-align: center;
+    padding: 5rem;
+}
 
+.quem-somos__titulo {
+    margin-bottom: 1rem;
+    color: #8d0606;
+    font-size: 3.1875rem;
+    font-family: Pacifico, cursive;
+}
 
+.quem-somos__descricao {
+    padding: 2rem;
+}
 
+.pessoa {
+    display: flex;
+    flex-direction: column;
+}
 
+.pessoa__nome {
+    margin: 1rem 0;
+    font-family: Pacifico, cursive;
+    color: #8d0606;
+    font-size: 2rem;
+}
+
+.pessoas {
+    display: flex;
+    padding-top: 3rem;
+    justify-content: space-around;
+}
+
+.pessoa__imagem {
+    background: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    margin: 0 auto;
+    width: 300px;
+}
+
+.pessoa__imagem--leandro {
+    background-image: url('../../assets/img/1.png')
+}
+
+.pessoa__imagem--erika {
+    background-image: url('../../assets/img/2.png')
+}
+
+.pessoa__imagem--eduardo {
+    background-image: url('../../assets/img/3.png')
+}
+
+.rodape {
+    background: #bfbfbf;
+    color: #fdfdfd;
+    text-align: right;
+    padding: 1.5625rem 5rem;
+    text-transform: lowercase;
+}
