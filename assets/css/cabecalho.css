@@ -5,6 +5,7 @@
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    
 }
 
 .cabecalho__logo {
@@ -17,12 +18,16 @@
 
 .cabecalho__link {
     display: inline-block;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-weight: 400;
     margin-right: .7rem;
     margin-bottom: 1.25rem;
     margin-left: .7rem;
 }
 
+a{
+    text-decoration:none;  
+  }
 
 
 @media screen and (min-width: 0) {
@@ -92,14 +97,18 @@
 
 .banner__titulo {
     color: #fdfdfd;
-    font-family: Pacifico, cursive;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.2;
     position: absolute;
-    left: 70%;
+    left: 80%;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
-    top: 50%;
+    top: 35%;
     text-align: center;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 20%;
 }
 
 body {
@@ -107,28 +116,37 @@ body {
     background-color : lightgray;
 }
 
-.sobre__titulo {
-    color: #8d0606;
-    font-family: Pacifico, cursive;
-    padding-top: 30px;
-    text-align: center;
-    font-size: 2rem;
-    margin: 0 0 1em;
-
-}
-
-
-
 .sobre {
-    font-weight: bold;
-    margin: 0 auto;
-    width: 940px;
+    margin-top: 4rem;
+    position: relative;
 }
 
-.sobre p {
-    width: 940px;
-    margin: 0 0 1em;    
+.sobre__imagem {
+    width: 100%;
+    padding: 0 3rem;
+    height: 50rem;
+    object-fit: cover;
 }
+
+.sobre__descricao {
+    color: #fdfdfd;
+    font-size: 1rem;
+    
+    border-radius: 8px;
+    padding: 20px;
+    line-height: 1.2;
+    position: absolute;
+    left: 30%;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+    top: 35%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+
+
+
 
 .mapa-conteudo {
     width: 940px;
