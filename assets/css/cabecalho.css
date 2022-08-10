@@ -54,58 +54,6 @@ a{
     text-decoration:none;  
   }
 
-
-@media screen and (min-width: 0) {
-    .header {
-        justify-content: center;
-        padding: 0 1 rem;
-    }
-} 
-
-@media screen and (min-width: 768px) {
-    .header {
-        padding: 0 5rem;
-        justify-content: space-between;
-    }
-}
-
-@media screen and (min-width: 0) {
-    .imagem-cabecalho {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .imagem-cabecalho {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 0) {
-    .banner__titulo {
-        font-size: 3rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .banner__titulo {
-        font-size: 5.0625rem;
-    }
-}
-
-@media screen and (min-width: 0) {
-    .banner__imagem {
-        height: calc(100vh - 51px);
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .banner__imagem {
-        height: calc(100vh - 72px);    
-    }
-}
-
-
 .imagem-cabecalho {
     width: 5%;
 }
@@ -121,19 +69,17 @@ a{
 }
 
 .banner__titulo {
-    color: #fdfdfd;
-    font-size: 1.5rem;
-    border: 2px solid white;
+    font-size: 2rem;
     border-radius: 8px;
     padding: 20px;
     line-height: 1.2;
     position: absolute;
-    left: 80%;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.75);
+    left: 85%;
+    font-weight: 600;
     top: 35%;
     text-align: center;
     transform: translate(-50%, -50%);
-    width: 20%;
+    width: 28%;
 }
 
 body {
@@ -148,7 +94,7 @@ body {
 
 .sobre__imagem {
     width: 100%;
-    padding: 0 3rem;
+    
     height: 50rem;
     object-fit: cover;
 }
@@ -169,129 +115,18 @@ body {
     width: 50%;
 }
 
-
-
-
-
-.mapa-conteudo {
-    width: 940px;
-    margin: 0 auto
-}
-
-.mapa p {
-    margin: 0 0 2em;
-    text-align: center;
-}
-
-.topo {
-    position: relative;
-}
-
-#bike {
-    width: 10%   
-}
-
 .marcas {
-    position: absolute;
-    top: 60px;
-    right: 60px;
+    display: flex;
+    flex-direction: row;
 }
 
-.marcas li {
-    display: inline;
-    margin: 0 0 0 25px;
-    font-size: 24px;
-}
-
-.produtos {
-    width: 1240px;
-    margin: 0 auto;
-    padding: 20px 0;
-}
-
-.produtos h2 {
-    font-size: 25px;
-    font-weight: bold;
-    padding-bottom: 5px;
-}
-
-.produtos li {
-    display: inline-block;
-    width: 38%;
-    text-align: center;
-    vertical-align: top;
-    margin: 0 5%; 
-    padding: 30px 20px;
-    box-sizing: border-box;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    background: white;
-}
-
-.produtos p {
-    font-size: 20px;
-}
-
-
-.models {
-    width: 100%;
-    
-}
-
-.quem-somos {
-    text-align: center;
-    padding: 5rem;
-}
-
-.quem-somos__titulo {
-    margin-bottom: 1rem;
-    color: #8d0606;
-    font-size: 3.1875rem;
-    font-family: Pacifico, cursive;
-}
-
-.quem-somos__descricao {
+.marcas__lista {
     padding: 2rem;
 }
 
-.pessoa {
-    display: flex;
-    flex-direction: column;
-}
-
-.pessoa__nome {
-    margin: 1rem 0;
-    font-family: Pacifico, cursive;
-    color: #8d0606;
-    font-size: 2rem;
-}
-
-.pessoas {
-    display: flex;
-    padding-top: 3rem;
-    justify-content: space-around;
-}
-
-.pessoa__imagem {
-    background: red;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 300px;
-    margin: 0 auto;
-    width: 300px;
-}
-
-.pessoa__imagem--leandro {
-    background-image: url('../../assets/img/1.png')
-}
-
-.pessoa__imagem--erika {
-    background-image: url('../../assets/img/2.png')
-}
-
-.pessoa__imagem--eduardo {
-    background-image: url('../../assets/img/3.png')
+.marcas__imagem {
+    display: inline-block;
+    margin-left: 2rem;
 }
 
 .rodape {
