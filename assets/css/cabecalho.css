@@ -115,18 +115,19 @@ body {
     width: 50%;
 }
 
-.marcas {
-    display: flex;
-    flex-direction: row;
-}
 
 .marcas__lista {
+    display: flex;
     padding: 2rem;
 }
 
 .marcas__imagem {
-    display: inline-block;
+    visibility: hidden;
     margin-left: 2rem;
+}
+
+.selecionada {
+    visibility: visible;
 }
 
 .rodape {
