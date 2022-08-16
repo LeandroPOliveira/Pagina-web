@@ -5,7 +5,8 @@ max = marcas.length;
 
 function proximaImagem() {
 
-    marcas[currentImageIndex].classList.remove('selecionada')
+    
+    marcas[currentImageIndex].style.left + 5 + 'px'
 
     currentImageIndex++
 
@@ -13,7 +14,7 @@ function proximaImagem() {
         currentImageIndex = 0
     }
 
-    marcas[currentImageIndex].classList.add('selecionada')
+    
 }
 
 function start() {

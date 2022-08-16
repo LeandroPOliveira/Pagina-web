@@ -2,17 +2,17 @@
     background-color: white;
     align-items: center;
     width: 100%;    
-    padding: 20px;
+    padding: 20px 0 20px;
     display: flex;
     justify-content: space-between;
     
 }
 
 .cabecalho-itens {
-    background-color: #3BADBC;
+    background-color: var(--azul-base);
     align-items: center;
     width: 100%;    
-    padding: 20px;
+    padding: 20px 0 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -24,12 +24,13 @@
 
 .cabecalho__midia {
     display: inline-block;
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin-right: .7rem;
-    margin-bottom: 1.25rem;
+    width: 30px;
+    margin-right: 2rem;
+    margin-bottom: .2rem;
     margin-left: .7rem;
 }
+
+
 
 .cabecalho__navegacao {
     display: flex;
@@ -82,6 +83,15 @@ a{
     width: 28%;
 }
 
+.intro {
+    padding: 3.5rem 0 3.5rem;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color : lightgray;
@@ -115,15 +125,22 @@ body {
     width: 50%;
 }
 
+.marcas {
+    background-color: var(--azul-base);
+    padding: 4rem 0 4rem;
+    font-size: 2rem;
+
+}
 
 .marcas__lista {
     display: flex;
-    padding: 2rem;
+    
 }
 
 .marcas__imagem {
-    visibility: hidden;
+    visibility: visible;
     margin-left: 2rem;
+    color: white;
 }
 
 .selecionada {
