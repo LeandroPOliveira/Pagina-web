@@ -1,9 +1,10 @@
 :root {
     --azul-claro: #cbeaff;
-    --azul-base:#3BADBC;
+    --azul-base: #2962ff;
 }
 
 body {
+    background-color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
