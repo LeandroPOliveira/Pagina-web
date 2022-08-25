@@ -12,7 +12,7 @@
     background-color: var(--azul-base);
     align-items: center;
     width: 100%;    
-    padding: 20px 0 20px;
+    padding: 20px 0 20px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -30,7 +30,12 @@
     margin-left: .7rem;
 }
 
+.cabecalho__contato {
+    background-color: orange;
+    color: white;
+    border: none;
 
+}
 
 .cabecalho__navegacao {
     display: flex;
@@ -65,7 +70,7 @@ a{
 
 .banner__imagem {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
     object-fit: cover;
     vertical-align: top;
 }
@@ -84,6 +89,17 @@ a{
     width: 35%;
 }
 
+.banner__titulo::before {
+    content: "";
+    background-color: #bfbfbf;
+    opacity: 0.3;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
 .intro {
     padding: 3.5rem 0 3.5rem;
     background-color: black;
@@ -99,7 +115,7 @@ body {
 }
 
 .sobre {
-    margin-top: 2rem;
+    margin: 4rem 0 4rem;
     position: relative;
 }
 
@@ -113,10 +129,9 @@ body {
 .sobre__descricao {
     line-height: 1.5;
     font-size: 1.5rem;
-    padding: 0 10rem 5rem;
+    padding: 0 10rem;
     color: #7A7A7A;
     text-align: center;
-    
 }
 
 .marcas {
@@ -172,15 +187,17 @@ body {
 
 .servicos {
     display: flex;
+    background-color: lightgray;
 }
 
 .servicos__descricao {
     width: 50%;
-    margin: 0 5rem;
+    margin: 2rem 5rem;
     line-height: 2;
 }
 
 .servicos__imagem {
+    margin: 2rem 0;
     width: 25%;
 }
 
