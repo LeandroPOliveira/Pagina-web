@@ -202,9 +202,25 @@ body {
 }
 
 .rodape {
-    background: #bfbfbf;
+    display: flex;
+    justify-content: space-around;
+    background: #000000;
+    opacity: 0.8;
     color: #fdfdfd;
-    text-align: right;
     padding: 1.5625rem 5rem;
     text-transform: lowercase;
+}
+
+.rodape__horarios {
+    display: flex;
+    text-align: left;
+}
+
+.horarios {
+    margin-right: 3rem;
+    line-height: 1.5;
+}
+
+.horas {
+    line-height: 1.5;
 }
