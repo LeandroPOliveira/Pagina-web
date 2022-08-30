@@ -12,13 +12,13 @@
     background-color: var(--azul-base);
     align-items: center;
     width: 100%;    
-    padding: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
     display: flex;
     justify-content: space-between;
 }
 
 .cabecalho__logo {
-    padding: 1rem 0 .2rem 4rem;
+    padding: 1rem 0 .2rem 5rem;
     height: 100px;
 }
 
@@ -31,16 +31,25 @@
 }
 
 .cabecalho__contato {
-    background-color: orange;
-    color: white;
-    border: none;
+    padding: 0.7rem;
+    background-color: white;
+    border-color: yellow;
+    border-radius: 4px;
+    margin-right: 5rem;
+
+}
+
+.cabecalho__midias {
+    display: flex;
+    align-items: center;
+    margin: 3rem 5rem 0 0;
 
 }
 
 .cabecalho__navegacao {
     display: flex;
     align-items: center;
-    margin-left: 3rem;
+    margin-left: 5rem;
 }
 
 a {
@@ -50,7 +59,7 @@ a {
 
 .cabecalho__link {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     margin: .4rem 1rem;
     
@@ -64,41 +73,6 @@ a{
     width: 5%;
 }
 
-.banner {
-    position: relative;
-}
-
-.banner__imagem {
-    width: 100%;
-    height: 25rem;
-    object-fit: cover;
-    vertical-align: top;
-}
-
-.banner__titulo {
-    color: white;
-    font-size: 2rem;
-    border-radius: 8px;
-    padding: 20px;
-    line-height: 1.2;
-    position: absolute;
-    left: 20%;
-    top: 30%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    width: 35%;
-}
-
-.banner__titulo::before {
-    content: "";
-    background-color: #bfbfbf;
-    opacity: 0.3;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-}
 
 .intro {
     padding: 3.5rem 0 3.5rem;
@@ -201,26 +175,3 @@ body {
     width: 25%;
 }
 
-.rodape {
-    display: flex;
-    justify-content: space-around;
-    background: #000000;
-    opacity: 0.8;
-    color: #fdfdfd;
-    padding: 1.5625rem 5rem;
-    text-transform: lowercase;
-}
-
-.rodape__horarios {
-    display: flex;
-    text-align: left;
-}
-
-.horarios {
-    margin-right: 3rem;
-    line-height: 1.5;
-}
-
-.horas {
-    line-height: 1.5;
-}
