@@ -9,7 +9,7 @@
 }
 
 .cabecalho-itens {
-    background-color: var(--azul-base);
+    background: linear-gradient(90deg,#007CF0, #00DFD8);
     align-items: center;
     width: 100%;    
     padding: 10px 0 10px 0;

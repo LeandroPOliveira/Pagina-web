@@ -5,19 +5,24 @@
     opacity: 0.8;
     color: #fdfdfd;
     padding: 1.5625rem 5rem;
-    text-transform: lowercase;
 }
 
-.rodape__horarios {
+.rodape__funcionamento {
     display: flex;
     text-align: left;
 }
 
-.horarios {
+.rodape__item {
     margin-right: 3rem;
     line-height: 1.5;
 }
 
-.horas {
-    line-height: 1.5;
+.rodape__titulo {
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.rodape__funcionamento__semana {
+    display: flex;
 }
