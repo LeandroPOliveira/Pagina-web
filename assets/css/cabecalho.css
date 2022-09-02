@@ -32,8 +32,9 @@
 
 .cabecalho__contato {
     padding: 0.7rem;
-    background-color: white;
-    border-color: yellow;
+    background-color: #fcba03;
+    color: white;
+    border-color: #fcba03;
     border-radius: 4px;
     margin-right: 5rem;
 
@@ -174,4 +175,3 @@ body {
     margin: 2rem 0;
     width: 25%;
 }
-

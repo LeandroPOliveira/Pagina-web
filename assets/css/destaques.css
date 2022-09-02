@@ -1,0 +1,41 @@
+.destaques__titulo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+
+.destaques__produtos {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.destaques__produtos h2 {
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.destaques__produtos li {
+    display: inline-block;
+    width: 38%;
+    text-align: center;
+    vertical-align: top;
+     
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background: white;
+}
+
+.destaques__produtos p {
+    font-size: 20px;
+}
+
+.destaques__imagem {
+    width: 100%;
+    
+}
