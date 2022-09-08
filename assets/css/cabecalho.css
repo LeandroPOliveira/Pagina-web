@@ -9,7 +9,7 @@
 }
 
 .cabecalho-itens {
-    background: linear-gradient(90deg,#007CF0, #00DFD8);
+    background: #007CF0;
     
     width: 100%;    
     
@@ -32,12 +32,10 @@
 
 .cabecalho__contato {
     padding: 1rem;
-    background-color: #fcba03;
+    background-color: #f0653e;
     color: white;
     border: none;
-    
     margin-right: 5rem;
-
 }
 
 .cabecalho__midias {
@@ -162,16 +160,20 @@ body {
 
 .servicos {
     display: flex;
-    background-color: lightgray;
+    justify-content: space-around;
+    background: linear-gradient(180deg, lightgray, white);
+    margin-bottom: 3rem;
 }
 
 .servicos__descricao {
+    margin: 2rem 0 0 12.5%;
     width: 50%;
-    margin: 2rem 5rem;
+    font-size: 1.3rem;
+    font-weight: 500;    
     line-height: 2;
 }
 
-.servicos__imagem {
-    margin: 2rem 0;
+.servicos__imagem {    
+    margin: 2rem 12.5% 0 0;
     width: 25%;
 }
