@@ -1,6 +1,9 @@
 :root {
     --azul-claro: #cbeaff;
-    --azul-base: #2962ff;
+    --azul-base: #1b75fd;
+    --vermelho: #ef1313;
+    --branco: #ffffff;
+    --cinza: #3b424c;
 }
 
 body {

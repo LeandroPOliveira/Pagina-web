@@ -5,14 +5,11 @@
     padding: 20px 0 20px;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .cabecalho-itens {
-    background: #007CF0;
-    
+    background: var(--cinza);
     width: 100%;    
-    
     display: flex;
     justify-content: space-between;
 }
@@ -32,7 +29,7 @@
 
 .cabecalho__contato {
     padding: 1rem;
-    background-color: #f0653e;
+    background-color: var(--vermelho);
     color: white;
     border: none;
     margin-right: 5rem;
@@ -75,8 +72,8 @@ a{
 
 .intro {
     padding: 3.5rem 0 3.5rem;
-    background-color: black;
-    opacity: 0.8;
+    background-color: var(--cinza);
+    
     color: white;
     text-align: center;
     font-size: 2rem;
