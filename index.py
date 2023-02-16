@@ -33,4 +33,4 @@ def criar():
     lista.append(nova_bike)
     return redirect('/home')
 
-app.run()
+app.run(debug=True)
