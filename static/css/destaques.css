@@ -28,6 +28,7 @@
 
 .destaques__produtos {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 2rem 6rem;
 }

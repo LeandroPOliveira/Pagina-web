@@ -37,5 +37,16 @@ def criar():
     lista.append(nova_bike)
     return redirect('/')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/autenticar', methods=['POST', ])
+def autenticar():
+    if 'tatupeba' == request.form['senha']:
+        return redirect('/')
+    else:
+        return redirect('/login')
+
 
 app.run(debug=True)
