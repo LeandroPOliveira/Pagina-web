@@ -3,8 +3,7 @@
 
 <body>  
     <header>
-        <div class="cabecalho">
-            {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <ul id="messages" class="list-unstyled">
                 {% for message in messages %}
@@ -13,6 +12,7 @@
                 </ul>
             {% endif %}
             {% endwith %}
+        <div class="cabecalho">
             <img class='cabecalho__logo' src="{{ url_for('static', filename='img/coroa.png') }}" alt="Logo da loja">
             <nav>
                 <ul class="cabecalho__midias">
