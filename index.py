@@ -1,36 +1,44 @@
+import os
+
 from flask import Flask, render_template, request, redirect, session, flash, url_for
-
-
-class Bicicleta:
-    def __init__(self, nome, foto, cor, preco):
-        self.nome = nome
-        self.foto = foto
-        self.cor = cor
-        self.preco = preco
-
-
-bike1 = Bicicleta('Epic Pro', 'static/img/branca.webp', 'Branca', 'R$ 79.000,00')
-bike2 = Bicicleta('Epic S-Works', 'static/img/works.webp', 'Verde', 'R$ 114.900,00')
-lista = [bike1, bike2]
-
-class Usuario:
-    def __init__(self, nome, nickname, senha):
-        self.nome = nome
-        self.nickname = nickname
-        self.senha = senha
-
-usuario1 = Usuario("Leandro", 'LO', 'tatupeba')
-usuario2 = Usuario('Erika', 'EK', 'cozida')
-usuario3 = Usuario('Guilherme', 'VE', 'zeca')
-
-usuarios = { usuario1.nickname: usuario1, usuario2.nickname: usuario2, usuario3.nickname: usuario3 }
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.secret_key = 'botina'
 
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = \
+'{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format(
+SGBD= 'mysql+mysqlconnector',
+servidor = 'localhost',
+usuario = 'root',
+senha = os.environ['senha'],
+database = 'catalogo')
+
+db = SQLAlchemy(app)
+class Bikes(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    nome = db.Column(db.String(50), nullable=False)
+    cor = db.Column(db.String(40), nullable=False)
+    preco = db.Column(db.Numeric(20, 2), nullable=False)
+
+    def __repr__(self):
+        return '<Name %r>' % self.name
+
+
+class Usuarios(db.Model):
+    nickname = db.Column(db.String(8), primary_key=True)
+    nome = db.Column(db.String(20), nullable=False)
+    senha = db.Column(db.String(100), nullable=False)
+
+    def __repr__(self):
+        return '<Name %r>' % self.name
+
+
 @app.route('/')
 def index():
+    lista = Bikes.query.order_by(Bikes.id)
     return render_template('index.html', bikes=lista, titulo='Coroa36 Bike Store')
 
 
@@ -47,9 +55,17 @@ def criar():
     imagem = 'static/img/' + request.form['imagem']
     cor = request.form['cor']
     preco = request.form['preco']
-    nova_bike = Bicicleta(nome, imagem, cor, preco)
-    print(imagem)
-    lista.append(nova_bike)
+
+    bike = Bikes.query.filter_by(nome=nome).first()
+
+    if bike:
+        flash('Bike já cadastrada!')
+        return redirect(url_for('index'))
+
+    nova_bike = Bikes(nome=nome, cor=cor, preco=preco)
+    db.session.add(nova_bike)
+    db.session.commit()
+
     return redirect(url_for('index'))
 
 
@@ -61,10 +77,9 @@ def login():
 
 @app.route('/autenticar', methods=['POST', ])
 def autenticar():
+    usuario = Usuarios.query.filter_by(nickname=request.form['usuario']).first()
     proxima_pagina = request.form['proxima']
-
-    if request.form['usuario'] in usuarios:
-        usuario = usuarios[request.form['usuario']]
+    if usuario:
         if request.form['senha'] == usuario.senha:
             session['usuario_logado'] = usuario.nickname
             flash(usuario.nickname + 'logado com sucesso')
