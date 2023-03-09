@@ -85,6 +85,8 @@
                     <img class='destaques__imagem' src="{{ bike.foto }}" alt="Bicicleta Specialized Epic Pro">
                     <p>{{ bike.cor }}</p>
                     <p>{{ bike.preco }}</p>
+                    <a href="{{ url_for('editar', id=bike.id) }}">Editar</a>
+                    <a href="{{ url_for('deletar', id=bike.id) }}">Deletar</a>
                 </li>
                 {% endfor %}
             </ul>

@@ -13,36 +13,26 @@
             {% endif %}
         {% endwith %}
       <div class="page-header">
-          <h1>Adicionar bike</h1>
+          <h1>Editar bike</h1>
       </div>
-      <form action="{{ url_for('criar') }}" method="post" enctype="multipart/form-data">
-
-          <figure class="img-thumbnail col-md-4">
-              <img class="img-fluid" src="{{ url_for('imagem', nome_arquivo='capa_padrao.jpg')}}" alt="">
-              <figcaption>
-                  <label class="fileContainer">
-                      Mudar capa
-                      <input type="file" name="arquivo" class="form-control" accept="image/*">
-                  </label>
-              </figcaption>
-          </figure>
-
+      <form action="{{ url_for('atualizar') }}" method="post">
         <fieldset>
+            <input type="hidden" name="id" value="{{bike.id}}">
           <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" class="form-control">
+            <input type="text" id="nome" name="nome" class="form-control" value="{{bike.nome}}">
           </div>
           <div class="form-group">
-            <label for="arquivo">Selecione a imagem</label>
-            <input type="file" id="arquivo" name="arquivo" class="form-control" accept="image/*">
+            <label for="imagem">Selecione a imagem</label>
+            <input type="file" id="imagem" name="imagem" class="form-control" accept="image/*">
           </div>
           <div class="form-group">
             <label for="cor">Cor</label>
-            <input type="text" id="cor" name="cor" class="form-control">
+            <input type="text" id="cor" name="cor" class="form-control" value="{{bike.cor}}">
           </div>
           <div class="form-group">
             <label for="preco">Preço</label>
-            <input type="text" id="preco" name="preco" class="form-control">
+            <input type="text" id="preco" name="preco" class="form-control" value="{{bike.preco}}">
           </div>
           <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
         </fieldset>
