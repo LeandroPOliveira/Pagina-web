@@ -82,7 +82,7 @@
                 {% for bike in bikes%}
                 <li>
                     <h2>{{ bike.nome }}</h2>
-                    <img class='destaques__imagem' src="{{ bike.foto }}" alt="Bicicleta Specialized Epic Pro">
+                    <img class='destaques__imagem' src="../uploads/capa{{ bike.id }}.jpg" alt="Bicicleta Specialized Epic Pro">
                     <p>{{ bike.cor }}</p>
                     <p>{{ bike.preco }}</p>
                     <a href="{{ url_for('editar', id=bike.id) }}">Editar</a>

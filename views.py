@@ -1,6 +1,9 @@
 from flask import render_template, request, redirect, session, flash, url_for, send_from_directory
 from index import app, db
 from models import Bikes, Usuarios
+from helpers import recupera_imagem, deleta_arquivo
+import time
+
 @app.route('/')
 def index():
     lista = Bikes.query.order_by(Bikes.id)
@@ -32,7 +35,8 @@ def criar():
 
     arquivo = request.files['arquivo']
     upload_path = app.config['UPLOAD_PATH']
-    arquivo.save(f'{upload_path}/capa{nova_bike.id}.jpg')
+    timestamp = time.time()
+    arquivo.save(f'{upload_path}/capa{nova_bike.id}-{timestamp}.jpg')
 
 
     return redirect(url_for('index'))
@@ -43,7 +47,8 @@ def editar(id):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('editar')))
     bike = Bikes.query.filter_by(id=id).first()
-    return render_template('editar.html', titulo='Editando Bike', bike=bike)
+    capa_bike = recupera_imagem(id)
+    return render_template('editar.html', titulo='Editando Bike', bike=bike, capa_bike=capa_bike)
 
 
 @app.route('/atualizar', methods=['POST', ])
@@ -55,6 +60,12 @@ def atualizar():
 
     db.session.add(bike)
     db.session.commit()
+
+    arquivo = request.files['arquivo']
+    upload_path = app.config['UPLOAD_PATH']
+    timestamp = time.time()
+    deleta_arquivo(bike.id)
+    arquivo.save(f'{upload_path}/capa{bike.id}-{timestamp}.jpg')
 
     return redirect(url_for('index'))
 
@@ -102,3 +113,4 @@ def logout():
 @app.route('/uploads/<nome_arquivo>')
 def imagem(nome_arquivo):
     return send_from_directory('uploads', nome_arquivo)
+
