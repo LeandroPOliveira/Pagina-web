@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, session, flash, url_for, send_from_directory
 from index import app, db
 from models import Bikes, Usuarios
-from helpers import recupera_imagem, deleta_arquivo
+from helpers import recupera_imagem, deleta_arquivo, FormularioBike, FormularioUsuario
 import time
 
 @app.route('/')
@@ -14,14 +14,21 @@ def index():
 def novo():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('novo')))
-    return render_template('novo.html', titulo='Nova Bike')
+    form = FormularioBike()
+    return render_template('novo.html', titulo='Nova Bike', form=form)
 
 
 @app.route('/criar', methods=['POST', ])
 def criar():
-    nome = request.form['nome']
-    cor = request.form['cor']
-    preco = request.form['preco']
+    form = FormularioBike(request.form)
+
+    if not form.validate_on_submit():
+        return redirect(url_for('novo'))
+
+
+    nome = form.nome.data
+    cor = form.cor.data
+    preco = form.preco.data
 
     bike = Bikes.query.filter_by(nome=nome).first()
 
@@ -47,25 +54,33 @@ def editar(id):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect(url_for('login', proxima=url_for('editar')))
     bike = Bikes.query.filter_by(id=id).first()
+    form = FormularioBike()
+    form.nome.data = bike.nome
+    form.cor.data = bike.cor
+    form.preco.data = bike.preco
+
     capa_bike = recupera_imagem(id)
-    return render_template('editar.html', titulo='Editando Bike', bike=bike, capa_bike=capa_bike)
+    return render_template('editar.html', titulo='Editando Bike', id=id, capa_bike=capa_bike, form=form)
 
 
 @app.route('/atualizar', methods=['POST', ])
 def atualizar():
-    bike = Bikes.query.filter_by(id=request.form['id']).first()
-    bike.nome = request.form['nome']
-    bike.cor = request.form['cor']
-    bike.preco = request.form['preco']
+    form = FormularioBike(request.form)
 
-    db.session.add(bike)
-    db.session.commit()
+    if form.validate_on_submit():
+        bike = Bikes.query.filter_by(id=request.form['id']).first()
+        bike.nome = form.nome.data
+        bike.cor = form.cor.data
+        bike.preco = form.preco.data
 
-    arquivo = request.files['arquivo']
-    upload_path = app.config['UPLOAD_PATH']
-    timestamp = time.time()
-    deleta_arquivo(bike.id)
-    arquivo.save(f'{upload_path}/capa{bike.id}-{timestamp}.jpg')
+        db.session.add(bike)
+        db.session.commit()
+
+        arquivo = request.files['arquivo']
+        upload_path = app.config['UPLOAD_PATH']
+        timestamp = time.time()
+        deleta_arquivo(bike.id)
+        arquivo.save(f'{upload_path}/capa{bike.id}-{timestamp}.jpg')
 
     return redirect(url_for('index'))
 
@@ -85,15 +100,18 @@ def deletar(id):
 @app.route('/login')
 def login():
     proxima = request.args.get('proxima')
-    return render_template('login.html', proxima=proxima)
+    form = FormularioUsuario()
+    return render_template('login.html', proxima=proxima, form=form)
 
 
 @app.route('/autenticar', methods=['POST', ])
 def autenticar():
-    usuario = Usuarios.query.filter_by(nickname=request.form['usuario']).first()
+    form = FormularioUsuario(request.form)
+
+    usuario = Usuarios.query.filter_by(nickname=form.nickname.data).first()
     proxima_pagina = request.form['proxima']
     if usuario:
-        if request.form['senha'] == usuario.senha:
+        if form.senha.data == usuario.senha:
             session['usuario_logado'] = usuario.nickname
             flash(usuario.nickname + 'logado com sucesso')
             if proxima_pagina == 'None':
