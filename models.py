@@ -7,7 +7,7 @@ class Bikes(db.Model):
     preco = db.Column(db.Numeric(20, 2), nullable=False)
 
     def __repr__(self):
-        return '<Name %r>' % self.name
+        return '<Name %r>' % self.nome
 
 
 class Usuarios(db.Model):

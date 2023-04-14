@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, session, flash, url_for, send_from_directory
 from index import app, db
-from models import Bikes, Usuarios
-from helpers import recupera_imagem, deleta_arquivo, FormularioBike, FormularioUsuario
+from models import Bikes
+from helpers import recupera_imagem, deleta_arquivo, FormularioBike
 import time
 
 @app.route('/')
@@ -52,8 +52,9 @@ def criar():
 @app.route('/editar/<int:id>')
 def editar(id):
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect(url_for('login', proxima=url_for('editar')))
+        return redirect(url_for('login', proxima=url_for('editar', id=id)))
     bike = Bikes.query.filter_by(id=id).first()
+    print(bike)
     form = FormularioBike()
     form.nome.data = bike.nome
     form.cor.data = bike.cor
@@ -97,36 +98,7 @@ def deletar(id):
     return redirect(url_for('index'))
 
 
-@app.route('/login')
-def login():
-    proxima = request.args.get('proxima')
-    form = FormularioUsuario()
-    return render_template('login.html', proxima=proxima, form=form)
 
-
-@app.route('/autenticar', methods=['POST', ])
-def autenticar():
-    form = FormularioUsuario(request.form)
-
-    usuario = Usuarios.query.filter_by(nickname=form.nickname.data).first()
-    proxima_pagina = request.form['proxima']
-    if usuario:
-        if form.senha.data == usuario.senha:
-            session['usuario_logado'] = usuario.nickname
-            flash(usuario.nickname + 'logado com sucesso')
-            if proxima_pagina == 'None':
-                proxima_pagina = url_for('index')
-            return redirect(proxima_pagina)
-    else:
-        flash('Usuario não encontrado')
-        return redirect(url_for('login'))
-
-
-@app.route('/logout')
-def logout():
-    session['usuario_logado'] = None
-    flash('Logout efetuado com sucesso')
-    return redirect(url_for('index'))
 
 @app.route('/uploads/<nome_arquivo>')
 def imagem(nome_arquivo):

@@ -15,7 +15,7 @@
       <div class="page-header">
           <h1>Editar bike</h1>
       </div>
-      <form action="{{ url_for('atualizar') }}" method="post">
+      <form class="formularioJogo" action="{{ url_for('atualizar') }}" method="post">
           <figure class="img-thumbnail col-md-4">
               <img class="img-fluid" src="{{ url_for('imagem', nome_arquivo=capa_bike) }}" alt="">
               <figcaption>
