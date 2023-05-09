@@ -43,7 +43,8 @@ def criar():
     arquivo = request.files['arquivo']
     upload_path = app.config['UPLOAD_PATH']
     timestamp = time.time()
-    arquivo.save(f'{upload_path}/capa{nova_bike.id}-{timestamp}.jpg')
+    # arquivo.save(f'{upload_path}/capa{nova_bike.id}-{timestamp}.jpg')
+    arquivo.save(f'{upload_path}/capa{nova_bike.id}.jpg')
 
 
     return redirect(url_for('index'))
