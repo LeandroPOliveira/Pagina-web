@@ -1,5 +1,5 @@
 // slider
-const slides = document.getElementsByClassName("slide"); // this selection is a live collection; any changes in DOM is updated in the variable unlike querySelectors
+const slides = document.getElementsByClassName("slides"); // this selection is a live collection; any changes in DOM is updated in the variable unlike querySelectors
 
 
 let currentSlideIndex = 0;

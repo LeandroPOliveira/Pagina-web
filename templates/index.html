@@ -1,62 +1,115 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 
-<body>  
+<body>
     <header>
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul id="messages" class="list-unstyled">
-                {% for message in messages %}
-                    <li class="alert alert-success">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-            {% endwith %}
-        <div class="cabecalho">
-            <img class='cabecalho__logo' src="{{ url_for('static', filename='img/coroa.png') }}" alt="Logo da loja">
-            <nav>
-                <ul class="cabecalho__midias">
-                    <li><a href="#"><img src="{{ url_for('static', filename='img/teste1.png') }}" class="cabecalho__midia" alt="Icone do Facebook"></a></li>
-                    <li><a href="#"><img class="cabecalho__midia" src="{{ url_for('static', filename='img/teste.png') }}" alt="Icone do Instagram"></a></li>
-                    <li><a href="#"><img src="{{ url_for('static', filename='img/teste2.png') }}"
-                    class="cabecalho__midia"alt="Icone do Youtube"></a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="cabecalho-itens">
-            <nav class="cabecalho__navegacao">
-                <ul>
-                    <li class="cabecalho__link"><a href="#">Oficina</a></li>
-                    <li class="cabecalho__link"><a href="#">Bicicletas</a></li>
-                    <li class="cabecalho__link"><a href="#">Bike Fit</a></li>
-                    <li class="cabecalho__link"><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-            <button class="cabecalho__contato"><a href="{{ url_for('login') }}">Login</a></button>
-        </div>
+        {% if messages %}
+        <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="img-fluid" src="../static/img/logo.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mountain</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Road</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gravel</a>
+                        </li>
+                        
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main> 
-        <section class="banner">
-            <img class='banner__imagem' src="{{ url_for('static', filename='img/david-marcu-VfUN94cUy4o-unsplash.jpg') }}" alt="Pessoa pedalando em uma estrada">
-            <h2 class="banner__titulo">Bora pedalar! Venha para a loja pedalando sua bike e ganhe 5% de desconto.</h2>
-        </section>
+    <main>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+              </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Third slide label</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
         <section class="marcas">
             <div class="slider">
-                <div class="slide s1"><img src="https://upload.wikimedia.org/wikipedia/en/5/52/Specialized_logo.svg" class="marcas__logo" alt=""></div>
-                <div class="slide s2"><img src="{{ url_for('static', filename='img/canyon.webp') }}" class="marcas__logo" alt=""></div>
-                <div class="slide s3"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/2018_Trek_logo_word_mark_wiki.svg" class="marcas__logo" alt=""></div>
-                <div class="slide s4"><img src="{{ url_for('static', filename='img/scott.png') }}" class="marcas__logo" alt=""></div>
+                <div class="slides s1"><img src="https://upload.wikimedia.org/wikipedia/en/5/52/Specialized_logo.svg"
+                        class="marcas__logo" alt=""></div>
+                <div class="slides s2"><img src="{{ url_for('static', filename='img/canyon.webp') }}"
+                        class="marcas__logo" alt=""></div>
+                <div class="slides s3"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/39/2018_Trek_logo_word_mark_wiki.svg"
+                        class="marcas__logo" alt=""></div>
+                <div class="slides s4"><img src="{{ url_for('static', filename='img/scott.png') }}" class="marcas__logo"
+                        alt=""></div>
             </div>
         </section>
         <section>
             <div class="intro">
                 <p lang="en">Born to <i>Ride.</i><b> Lets Bike!</b></p>
-            </div>  
+            </div>
             <div class="sobre">
                 <!--<img src="./img/road.jpg" class='sobre__imagem' alt="">-->>
                 <p class="sobre__descricao">
-                Somos a Coroa36 Bike Store, uma loja moderna localizada em Delfinópolis-MG, na Serra da Canastra.<b> Temos uma equipe treinada e apaixonada pelo esporte.</b>
+                    Somos a Coroa36 Bike Store, uma loja moderna localizada em Delfinópolis-MG, na Serra da Canastra.<b>
+                        Temos uma equipe treinada e apaixonada pelo esporte.</b>
                 </p>
             </div>
         </section>
@@ -64,7 +117,8 @@
             <div class="servicos">
                 <ul class="servicos__descricao">
                     <li>
-                        <p>Há mais de 10 anos atuando na manutenção completa de bicicletas de todos os segmentos.</p><br>
+                        <p>Há mais de 10 anos atuando na manutenção completa de bicicletas de todos os segmentos.</p>
+                        <br>
                         <article>
                             <p>Revisão corretiva e preventiva;</p>
                             <p>Manutenção em suspensões;</p>
@@ -73,8 +127,9 @@
                             <p>Reparo em carbono;</p>
                         </article>
                     </li>
-                </ul>   
-                <img class='servicos__imagem' src="{{ url_for('static', filename='img/oficina.jpg') }}" alt="homem fazendo manutenção de bicicleta de estrada">
+                </ul>
+                <img class='servicos__imagem' src="{{ url_for('static', filename='img/oficina.jpg') }}"
+                    alt="homem fazendo manutenção de bicicleta de estrada">
             </div>
         </section>
         <section class="destaques container">
@@ -83,7 +138,8 @@
                 {% for bike in bikes%}
                 <li>
                     <h2>{{ bike.nome }}</h2>
-                    <img class='destaques__imagem' src="../uploads/capa{{ bike.id }}.jpg" alt="Bicicleta Specialized Epic Pro">
+                    <img class='destaques__imagem' src="../uploads/capa{{ bike.id }}.jpg"
+                        alt="Bicicleta Specialized Epic Pro">
                     <p>{{ bike.cor }}</p>
                     <p>{{ bike.preco }}</p>
                     <a href="{{ url_for('editar', id=bike.id) }}">Editar</a>
@@ -138,7 +194,7 @@
                 <li class="rodape__item">Eventos</li>
             </ul>
         </div>
-            
+
     </footer>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
