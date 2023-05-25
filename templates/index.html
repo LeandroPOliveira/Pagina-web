@@ -57,24 +57,24 @@
               </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" style="object-fit: cover;" width="800" height="400" src="../static/img/slidermtb.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block text-start">
+                  <h5 class="h1">Mountain bikes</h5>
+                  <p class="h4">Se o seu lugar é na montanha, veja nossas opções.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em">Second slide</text></svg>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
+                <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" style="object-fit: cover;" width="800" height="400" src="../static/img/sliderroad.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block text-start">
+                  <h5 class="h1">Road bikes</h5>
+                  <p class="h4">Para os amantes de alta velocidade.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em">Third slide</text></svg>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+                <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" style="object-fit: cover;" width="800" height="400" src="../static/img/slidergravel.jpg" alt="">
+                <div class="carousel-caption d-none d-md-block text-start">
+                  <h5 class="h1">Gravel bikes</h5>
+                  <p class="h4">Para te mover além do asfalto e do previsível.</p>
                 </div>
               </div>
             </div>
@@ -87,7 +87,19 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
-
+        <section>
+            <!-- <div class="intro">
+                <p lang="en">Born to <i>Ride.</i><b> Lets Bike!</b></p>
+            </div> -->
+            <div class="sobre">
+                
+                <!--<img src="./img/road.jpg" class='sobre__imagem' alt="">-->>
+                <p class="sobre__descricao mx-5">
+                    Somos a BikeSwap, nossa missão é conectar ciclistas de todo o país que estão em busca de uma nova 
+                    bike ou que desejam colocar a sua à venda.</b>
+                </p>
+            </div>
+        </section>
         <section class="marcas">
             <div class="slider">
                 <div class="slides s1"><img src="https://upload.wikimedia.org/wikipedia/en/5/52/Specialized_logo.svg"
@@ -101,37 +113,7 @@
                         alt=""></div>
             </div>
         </section>
-        <section>
-            <div class="intro">
-                <p lang="en">Born to <i>Ride.</i><b> Lets Bike!</b></p>
-            </div>
-            <div class="sobre">
-                <!--<img src="./img/road.jpg" class='sobre__imagem' alt="">-->>
-                <p class="sobre__descricao">
-                    Somos a Coroa36 Bike Store, uma loja moderna localizada em Delfinópolis-MG, na Serra da Canastra.<b>
-                        Temos uma equipe treinada e apaixonada pelo esporte.</b>
-                </p>
-            </div>
-        </section>
-        <section>
-            <div class="servicos">
-                <ul class="servicos__descricao">
-                    <li>
-                        <p>Há mais de 10 anos atuando na manutenção completa de bicicletas de todos os segmentos.</p>
-                        <br>
-                        <article>
-                            <p>Revisão corretiva e preventiva;</p>
-                            <p>Manutenção em suspensões;</p>
-                            <p>Instalação de Kit Tubeless;</p>
-                            <p>Lubrificação completa;</p>
-                            <p>Reparo em carbono;</p>
-                        </article>
-                    </li>
-                </ul>
-                <img class='servicos__imagem' src="{{ url_for('static', filename='img/oficina.jpg') }}"
-                    alt="homem fazendo manutenção de bicicleta de estrada">
-            </div>
-        </section>
+        
         <section class="destaques container">
             <h3 class="destaques__titulo">Destaques</h3>
             <ul class='destaques__produtos'>
@@ -197,6 +179,7 @@
 
     </footer>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
 {% endblock %}

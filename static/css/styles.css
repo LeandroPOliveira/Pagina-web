@@ -87,7 +87,10 @@ td {
     font-size: 2rem;
 }
 
-
+/* .carousel-caption {
+    top: 0;
+    bottom: auto;
+} */
 
 .sobre {
     margin: 4rem 0 4rem;
