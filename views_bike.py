@@ -7,6 +7,7 @@ import time
 @app.route('/')
 def index():
     lista = Bikes.query.order_by(Bikes.id)
+    print(lista)
     return render_template('index.html', bikes=lista, titulo='Coroa36 Bike Store')
 
 
@@ -45,7 +46,6 @@ def criar():
     timestamp = time.time()
     # arquivo.save(f'{upload_path}/capa{nova_bike.id}-{timestamp}.jpg')
     arquivo.save(f'{upload_path}/capa{nova_bike.id}.jpg')
-
 
     return redirect(url_for('index'))
 

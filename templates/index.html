@@ -105,42 +105,47 @@
                 </p>
             </div>
         </section>
-        
-            <div class="marquee w-100">
-                <ul class="marquee-content">
-                    <li><img src="{{ url_for('static', filename='img/canyon-1.svg') }}"
-                        class="marcas__logo" alt=""></li>
-                    <li><img src="https://upload.wikimedia.org/wikipedia/en/5/52/Specialized_logo.svg" class="marcas__logo" alt=""></li>
-                    <li><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/3/39/2018_Trek_logo_word_mark_wiki.svg"
-                        class="marcas__logo" alt=""></li>
-                    <li><img src="{{ url_for('static', filename='img/scott-7.svg') }}"
-                        class="marcas__logo" alt=""></li>
-                        <li><img src="{{ url_for('static', filename='img/cannondale-3.svg') }}" class="marcas__logo"
-                             alt=""></li>
-                    <li><img src="{{ url_for('static', filename='img/pinarello-1.svg') }}" class="marcas__logo"
+
+        <div class="marquee w-100">
+            <ul class="marquee-content">
+                <li><img src="{{ url_for('static', filename='img/canyon-1.svg') }}" class="marcas__logo" alt=""></li>
+                <li><img src="https://upload.wikimedia.org/wikipedia/en/5/52/Specialized_logo.svg" class="marcas__logo"
                         alt=""></li>
-                </ul>
-            </div>
+                <li><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/2018_Trek_logo_word_mark_wiki.svg"
+                        class="marcas__logo" alt=""></li>
+                <li><img src="{{ url_for('static', filename='img/scott-7.svg') }}" class="marcas__logo" alt=""></li>
+                <li><img src="{{ url_for('static', filename='img/cannondale-3.svg') }}" class="marcas__logo" alt="">
+                </li>
+                <li><img src="{{ url_for('static', filename='img/pinarello-1.svg') }}" class="marcas__logo" alt=""></li>
+            </ul>
+        </div>
 
-        
-
-        <section class="destaques container">
-            <h3 class="destaques__titulo">Destaques</h3>
-            <ul class='destaques__produtos'>
-                {% for bike in bikes%}
-                <li>
-                    <h2>{{ bike.nome }}</h2>
+        <h3 class="destaques__titulo">Destaques</h3>
+        <div class="container row g-4 mx-auto">
+            {% for bike in bikes%}
+            <div class="col-md-6 col-xl-4">
+                <div class="card  border-0 mx-3">
                     <img class='destaques__imagem' src="../uploads/capa{{ bike.id }}.jpg"
                         alt="Bicicleta Specialized Epic Pro">
-                    <p>{{ bike.cor }}</p>
-                    <p>{{ bike.preco }}</p>
-                    <a href="{{ url_for('editar', id=bike.id) }}">Editar</a>
-                    <a href="{{ url_for('deletar', id=bike.id) }}">Deletar</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </section>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ bike.nome }}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ bike.cor }}</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">{{ bike.preco }}</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="{{ url_for('editar', id=bike.id) }}" class="btn btn-primary">Editar</a>
+                        <a href="{{ url_for('deletar', id=bike.id) }}" class="btn btn-primary">Deletar</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
 
     </main>
     <footer class="rodape">
