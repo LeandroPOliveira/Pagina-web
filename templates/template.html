@@ -3,13 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ titulo|upper }}</title>
+    <title>{{ titulo }}</title>
     <link rel='stylesheet' href="{{ url_for('static', filename='css/bootstrap.css') }}">
     <link rel='stylesheet' href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel='stylesheet' href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel='stylesheet' href="{{ url_for('static', filename='css/login.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"" rel="stylesheet">
 </head>
 
+<body>
+    <header>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul id="messages" class="list-unstyled">
+            {% for message in messages %}
+            <li class="alert alert-success">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid mx-3">
+                <a class="navbar-brand" href="#"><img class="img-fluid" src="../static/img/logo.png" width="130" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mountain</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Road</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gravel</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
 {% block conteudo %} {% endblock %}
 
+</body>
 </html>

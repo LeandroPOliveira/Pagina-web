@@ -4,11 +4,12 @@ from models import Bikes
 from helpers import recupera_imagem, deleta_arquivo, FormularioBike
 import time
 
+
 @app.route('/')
 def index():
     lista = Bikes.query.order_by(Bikes.id)
     print(lista)
-    return render_template('index.html', bikes=lista, titulo='Coroa36 Bike Store')
+    return render_template('index.html', bikes=lista, titulo='TrokaBike')
 
 
 @app.route('/novo')

@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Coroa36 - Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-  </head>
-  <body>
-    <img src="{{ url_for('static', filename='img/road3.jpg') }}" alt="">
+{% extends 'template.html' %}
+{% block conteudo %}
+
+<main class="log-user">
+    <img class="img-fluid img-fundo" src="{{ url_for('static', filename='img/login.jpg') }}" alt="">
     <div class="login">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -37,6 +31,7 @@
 
         </form>
     </div>
-</body>
-</html>
+</main>
+
+{% endblock %}
 

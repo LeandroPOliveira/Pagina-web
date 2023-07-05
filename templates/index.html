@@ -1,50 +1,6 @@
 {% extends 'template.html' %}
 {% block conteudo %}
 
-<body>
-    <header>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul id="messages" class="list-unstyled">
-            {% for message in messages %}
-            <li class="alert alert-success">{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img class="img-fluid" src="../static/img/logo.png" alt=""></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mountain</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Road</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gravel</a>
-                        </li>
-
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <main>
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -93,15 +49,10 @@
             </button>
         </div>
         <section>
-            <!-- <div class="intro">
-                <p lang="en">Born to <i>Ride.</i><b> Lets Bike!</b></p>
-            </div> -->
             <div class="sobre">
-
-                <!--<img src="./img/road.jpg" class='sobre__imagem' alt="">-->>
                 <p class="sobre__descricao mx-5">
-                    Somos a BikeSwap, nossa missão é conectar ciclistas de todo o país que estão em busca de uma nova
-                    bike ou que desejam colocar a sua à venda.</b>
+                    Experimente a liberdade sobre duas rodas! Conheça nosso site de troca de bicicletas e
+                    descubra um novo mundo de possibilidades para pedalar.</b>
                 </p>
             </div>
         </section>
@@ -196,6 +147,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-</body>
 
 {% endblock %}
