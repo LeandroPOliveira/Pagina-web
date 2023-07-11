@@ -75,8 +75,8 @@
         <div class="container row g-4 mx-auto">
             {% for bike in bikes%}
             <div class="col-md-6 col-xl-4">
-                <div class="card  border-0 mx-3">
-                    <img class='destaques__imagem' src="../uploads/capa{{ bike.id }}.jpg"
+                <div class="card  border-0 mx-3 mb-3">
+                    <img class='card-img-top' src="../uploads/capa{{ bike.id }}.jpg"
                         alt="Bicicleta Specialized Epic Pro">
                     <div class="card-body">
                         <h5 class="card-title">{{ bike.nome }}</h5>
@@ -87,10 +87,10 @@
                         <li class="list-group-item">{{ bike.ano }}</li>
                         <li class="list-group-item">{{ '%0.2f'|format(bike.preco|float) }}</li>
                     </ul>
-                    <div class="card-body">
-                        <a href="{{ url_for('editar', id=bike.id) }}" class="btn btn-primary">Editar</a>
-                        <a href="{{ url_for('deletar', id=bike.id) }}" class="btn btn-primary">Deletar</a>
-                    </div>
+<!--                    <div class="card-body">-->
+<!--                        <a href="{{ url_for('editar', id=bike.id) }}" class="btn btn-primary">Editar</a>-->
+<!--                        <a href="{{ url_for('deletar', id=bike.id) }}" class="btn btn-primary">Deletar</a>-->
+<!--                    </div>-->
                 </div>
             </div>
             {% endfor %}
