@@ -4,15 +4,6 @@
 <main class="log-user">
     <img class="img-fluid img-fundo" src="{{ url_for('static', filename='img/login.jpg') }}" alt="">
     <div class="login">
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul id="messages" class="list-unstyled">
-                {% for message in messages %}
-                    <li class="alert alert-success">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
         <h1 class="text-center">Faça seu login</h1>
         <form method="POST" action="{{ url_for('autenticar') }}">
             <input type="hidden" name="proxima" value="{{ proxima }}">

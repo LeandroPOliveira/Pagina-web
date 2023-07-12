@@ -129,6 +129,14 @@ td {
     visibility: visible;
 }
 
+.btn-login{
+    color: #ffffff;
+    background-color:#1b75fd;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.3rem;
+}
+
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
