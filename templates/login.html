@@ -5,7 +5,7 @@
     <img class="img-fluid img-fundo" src="{{ url_for('static', filename='img/login.jpg') }}" alt="">
     <div class="login">
         <h1 class="text-center">Faça seu login</h1>
-        <form method="POST" action="{{ url_for('autenticar') }}">
+        <form method="POST" action="{{ url_for('login') }}">
             <input type="hidden" name="proxima" value="{{ proxima }}">
             {{ form.csrf_token() }}
             <div class="form-group">

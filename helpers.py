@@ -1,4 +1,5 @@
 import os
+from flask_login import UserMixin
 from index import app
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, validators, DecimalField
