@@ -200,9 +200,11 @@ td {
 
 .marquee-content li img {
   width: 45%;
-  
-  
 } 
+
+.teste {
+    z-index: -10;
+}
 
 @media (max-width: 600px) {
   html { font-size: 12px; }

@@ -3,6 +3,7 @@ from index import app, db
 from models import Bikes
 from helpers import recupera_imagem, deleta_arquivo, FormularioBike
 import time
+from flask_login import current_user
 
 
 @app.route('/')
@@ -14,7 +15,7 @@ def index():
 
 @app.route('/novo')
 def novo():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+    if not current_user.is_authenticated:
         return redirect(url_for('login', proxima=url_for('novo')))
     form = FormularioBike()
     return render_template('novo.html', titulo='Nova Bike', form=form)
@@ -53,7 +54,7 @@ def criar():
 
 @app.route('/editar/<int:id>')
 def editar(id):
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+    if not current_user.is_authenticated:
         return redirect(url_for('login', proxima=url_for('editar', id=id)))
     bike = Bikes.query.filter_by(id=id).first()
     print(bike)
