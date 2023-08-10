@@ -1,24 +1,16 @@
-{% extends 'template.html' %}
-{% block conteudo %}
+{% extends 'bikes/template.html' %}
+{% load static %}
+{% block content %}
 
 <body>
     <div class="container">
-      {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul id="messages" class="list-unstyled">
-                {% for message in messages %}
-                    <li class="alert alert-success">{{ message }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
       <div class="page-header">
           <h1>Adicionar bike</h1>
       </div>
-      <form action="{{ url_for('criar') }}" method="post" enctype="multipart/form-data">
+      <form action="" method="post" enctype="multipart/form-data">
 
           <figure class="img-thumbnail col-md-4">
-              <img class="img-fluid" src="{{ url_for('imagem', nome_arquivo='capa_padrao.jpg')}}" alt="">
+              <img class="img-fluid" src="{% static 'assets/imagens/galeria/not-found.jpg' %}" alt="">
               <figcaption>
                   <label class="fileContainer">
                       Mudar capa
@@ -28,31 +20,11 @@
           </figure>
 
         <fieldset>
-            {{ form.csrf_token() }}
-          <div class="form-group">
-            {{ form.nome.label(class="form-label") }}
-              {{ form.nome(class="form-control") }}
-          </div>
-          <div class="form-group">
-            <label for="arquivo">Selecione a imagem</label>
-            <input type="file" id="arquivo" name="arquivo" class="form-control" accept="image/*">
-          </div>
-          <div class="form-group">
-              {{ form.cor.label(class="form-label") }}
-            {{ form.cor(class="form-control") }}
-          </div>
-          <div class="form-group">
-              {{ form.preco.label(class="form-label") }}
-            {{ form.preco(class="form-control") }}
-          </div>
-          <div>
-              {{ form.salvar(class="btn btn-primary") }}
-          </div>
+            {% csrf_token %}
+
         </fieldset>
       </form>
     </div>
-    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
-</body>
+
 
 {% endblock %}
