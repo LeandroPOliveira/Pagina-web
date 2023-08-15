@@ -3,7 +3,6 @@
 {% block content %}
 
     <main>
-        {% include 'partials/_alertas.html' %}
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -70,9 +69,20 @@
                 <li><img src="{% static 'img/cannondale-3.svg' %}" class="marcas__logo" alt="">
                 </li>
                 <li><img src="{% static 'img/pinarello-1.svg' %}" class="marcas__logo" alt=""></li>
+                <li><img src="{% static 'img/cervelo-1.svg' %}" class="marcas__logo" alt=""></li>
+                <li><img src="{% static 'img/colnago-logo-1.svg' %}" class="marcas__logo" alt=""></li>
             </ul>
         </div>
+        <section class="tags">
+            <p class="text-center mt-5 mb-3 h3 opacity-75">Busque por tags:</p>
+            <ul class="d-flex justify-content-center pe-3 mb-5">
+                <li class=""><a href="{% url 'filtro' 'MOUNTAIN' %}" class="btn btn-primary mx-3">Mountain</a></li>
+                <li class=""><a href="{% url 'filtro' 'ROAD' %}" class="btn btn-primary mx-3">Road</a></li>
+                <li class=""><a href="{% url 'filtro' 'GRAVEL' %}" class="btn btn-primary mx-3">Gravel</a></li>
+            </ul>
 
+
+        </section>
         <h3 class="destaques__titulo">Destaques</h3>
         <div class="container row g-4 mx-auto">
             {% if cards %}

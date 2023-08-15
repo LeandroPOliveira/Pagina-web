@@ -15,7 +15,7 @@ body {
 .marcas__logo {
     filter: invert(100%);
     /* width: 250px; */
-    
+
 }
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -81,7 +81,7 @@ body {
 
 .marquee-content li img {
   width: 45%;
-} 
+}
 
 .teste {
     z-index: -10;
@@ -107,7 +107,7 @@ body {
     width:70%;
     margin:1.2rem auto 3rem;
     overflow: hidden;
-    text-align:center;   
+    text-align:center;
     line-height:1.2em;
 
 }
@@ -123,6 +123,37 @@ body {
 
 .destaques__titulo:after{
     margin:0 -55% 0 2%;
+}
+
+.tags {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+
+    font-size: 1.3rem;
+}
+
+.tags__titulo {
+    margin-right: 4rem;
+}
+
+.tags__lista {
+    display: flex;
+}
+
+.tags__tag {
+
+    margin-right: 1.5rem;
+    border-radius: 8px;
+    padding: .8rem .5rem;
+    width: 100px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.tags__tag:hover {
+    border: 2px solid #7B78E5;
+    cursor: pointer;
 }
 
 .rodape {

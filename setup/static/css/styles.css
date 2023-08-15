@@ -12,9 +12,6 @@ body {
 
 }
 
-.btn {
-    margin-bottom: 10px;
-}
 
 .container {
     border-radius: 4px;
@@ -63,9 +60,6 @@ td {
     margin-right: 16px
 }
 
-.buttons {
-    margin-top: 16px
-}
 
 .inputBox {
     width: 700px;
@@ -81,7 +75,7 @@ td {
 .intro {
     padding: 3.5rem 0 3.5rem;
     background-color: var(--cinza);
-    
+
     color: white;
     text-align: center;
     font-size: 2rem;
@@ -99,7 +93,7 @@ td {
 
 .sobre__imagem {
     width: 100%;
-    
+
     height: 50rem;
     object-fit: cover;
 }
@@ -118,11 +112,11 @@ td {
     font-size: 2rem;
 }
 
-  
+
 .marcas__logo {
     filter: invert(100%);
     /* width: 250px; */
-    
+
 }
 
 .selecionada {
@@ -200,7 +194,7 @@ td {
 
 .marquee-content li img {
   width: 45%;
-} 
+}
 
 .teste {
     z-index: -10;
@@ -226,7 +220,7 @@ td {
     width:70%;
     margin:1.2rem auto 3rem;
     overflow: hidden;
-    text-align:center;   
+    text-align:center;
     line-height:1.2em;
 
 }
@@ -243,6 +237,9 @@ td {
 .destaques__titulo:after{
     margin:0 -55% 0 2%;
 }
+
+
+
 
 .rodape {
     display: flex;

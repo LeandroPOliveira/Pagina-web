@@ -19,9 +19,8 @@
 
 <div class="container mt-5">
     <h1>Add a New Product</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <form action="{% url 'nova_bike' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-
         {% for field in form.visible_fields %}
         <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
             {% if field.name == 'foto' %}
