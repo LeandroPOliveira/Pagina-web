@@ -38,3 +38,7 @@ def editar_bike(request):
 def filtro(request, categoria):
     bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True, categoria=categoria)
     return render(request, 'bikes/index.html', {'cards': bikes})
+
+
+def detalhes_bike(request):
+    return render(request, 'bikes/detalhes_bike.html')
