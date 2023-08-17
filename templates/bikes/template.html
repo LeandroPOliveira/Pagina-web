@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ titulo }}</title>
+    <title>{{titulo}}</title>
     <link rel='stylesheet' href="{% static 'css/reset.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -32,26 +32,26 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item me-3">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Mountain</a>
+                            <a class="nav-link" href="{% url 'filtro' 'MOUNTAIN' %}">Mountain</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Road</a>
+                            <a class="nav-link" href="{% url 'filtro' 'ROAD' %}">Road</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gravel</a>
+                            <a class="nav-link" href="{% url 'filtro' 'GRAVEL' %}">Gravel</a>
                         </li>
 
                     </ul>
-                     {% if request.user.is_authenticated %}
-                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'logout' %}">Logout</a>
-                     {% else %}
-                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'cadastro' %}">Cadastrar</a>
-                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'login' %}">Login</a>
-                     {% endif %}
+                    {% if request.user.is_authenticated %}
+                    <a class="nav-link btn-primary me-3 btn-login" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="nav-link btn-primary me-3 btn-login" href="{% url 'cadastro' %}">Cadastrar</a>
+                    <a class="nav-link btn-primary me-3 btn-login" href="{% url 'login' %}">Login</a>
+                    {% endif %}
 
 
                 </div>
@@ -61,54 +61,15 @@
 
 
 
-    
+
     {% block content %}{%endblock%}
-    
+
 
     <footer class="rodape">
-        <div class="rodape__funcionamento">
-            <div class="">
-                <h2 class="rodape__titulo">Horário de Funcionamento</h2>
-                <div class="rodape__funcionamento__semana">
-                    <ul class="rodape__dias">
-                        <li class="rodape__item">Segunda:</li>
-                        <li class="rodape__item">Terça: </li>
-                        <li class="rodape__item">Quarta: </li>
-                        <li class="rodape__item">Quinta: </li>
-                        <li class="rodape__item">Sexta: </li>
-                        <li class="rodape__item">Sabado: </li>
-                        <li class="rodape__item">Domingo: </li>
-                    </ul>
-                    <ul class="rodape__dias">
-                        <li class="rodape__item">9.00 - 17.30</li>
-                        <li class="rodape__item">9.00 - 17.30</li>
-                        <li class="rodape__item">9.00 - 17.30</li>
-                        <li class="rodape__item">9.00 - 17.30</li>
-                        <li class="rodape__item">9.00 - 17.30</li>
-                        <li class="rodape__item">9.00 - 11.30</li>
-                        <li class="rodape__item">Fechado</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="h4 text-center">
+            <p class="my-auto pt-5 pb-5">Trokabike 2023 - Todos os direitos reservados</p>
         </div>
-        <div class="rodape__itens">
-            <h2 class="rodape__titulo">Serviços</h2>
-            <ul class="rodape__sobre">
-                <li class="rodape__item">Seguros</li>
-                <li class="rodape__item">Devoluções</li>
-                <li class="rodape__item">Glossario de Bikes</li>
-                <li class="rodape__item">Aluguel de Bike</li>
-            </ul>
-        </div>
-        <div class="rodape__itens2">
-            <h2 class="rodape__titulo">Sobre Nós</h2>
-            <ul class="rodape__sobre">
-                <li class="rodape__item">Nossas Lojas</li>
-                <li class="rodape__item">Contato</li>
-                <li class="rodape__item">História</li>
-                <li class="rodape__item">Eventos</li>
-            </ul>
-        </div>
+
 
     </footer>
     <script src="{% static 'script.js' %}"></script>

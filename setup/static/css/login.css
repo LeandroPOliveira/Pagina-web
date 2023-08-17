@@ -1,5 +1,3 @@
-
-
 .log-user {
     height: 100vh;
     display: flex;
@@ -8,7 +6,7 @@
     background: #0d6efd;
 }
 
-img-fundo {
+.img-fundo {
   display: block;
 
 }

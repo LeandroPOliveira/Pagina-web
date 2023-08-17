@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from bikes.models import Bikes
 from django.contrib import messages
 from bikes.forms import BikesForms
@@ -10,7 +10,8 @@ def index(request):
         return redirect('login')
 
     bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True)
-    return render(request, 'bikes/index.html', {'cards': bikes})
+    titulo = 'Trokabike'
+    return render(request, 'bikes/index.html', {'cards': bikes, 'titulo': titulo})
 
 
 def nova_bike(request):
@@ -40,5 +41,7 @@ def filtro(request, categoria):
     return render(request, 'bikes/index.html', {'cards': bikes})
 
 
-def detalhes_bike(request):
-    return render(request, 'bikes/detalhes_bike.html')
+def detalhes_bike(request, bike_id):
+    bike = get_object_or_404(Bikes, pk=bike_id)
+    return render(request, 'bikes/detalhes_bike.html', {'bike': bike})
+
