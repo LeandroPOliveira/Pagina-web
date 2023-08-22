@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Form</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Add custom styles here */
-        body {
-            background-image: url('path_to_your_background_image.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-    </style>
-</head>
-<body>
+{% extends 'bikes/template.html' %}
+{% load static %}
+{% block content %}
 
 <div class="container mt-5">
-    <h1>Add a New Product</h1>
+    <h1>Adicionar nova Bike</h1>
     <form action="{% url 'nova_bike' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form.visible_fields %}
@@ -26,7 +11,7 @@
             {% if field.name == 'foto' %}
             <label for="{{ field.id_for_label }}" style="margin-bottom: 5px;">{{field.label}}</label>
             {{ field }}
-            <img id="foto-preview" src="#" alt="Selected Image" class="mt-2" style="max-width: 80vw;">
+            <img id="foto-preview" src="#" alt="Selected Image" class="mt-2" style="width: 300px;">
             {% else %}
             <label for="{{ field.id_for_label }}" style="margin-bottom: 5px;">{{field.label}}</label>
             {{ field }}
@@ -38,25 +23,4 @@
     </form>
 </div>
 
-<!-- Include Bootstrap JS and any other scripts here -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-function previewImage(input) {
-    var preview = document.getElementById('foto-preview');
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-            preview.src = e.target.result;
-        };
-        reader.readAsDataURL(input.files[0]);
-    } else {
-        preview.src = "#";
-    }
-}
-</script>
-
-</body>
-</html>
+{% endblock %}

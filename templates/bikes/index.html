@@ -103,7 +103,7 @@
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">{{ bike.cor }}</li>
                     <li class="list-group-item">{{ bike.ano }}</li>
-                    <li class="list-group-item">{{ bike.preco }}</li>
+                    <li class="list-group-item">{{ bike.preco | floatformat:2 }}</li>
                 </ul>
             </div>
         </div>

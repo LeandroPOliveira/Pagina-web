@@ -16,10 +16,10 @@ class Bikes(models.Model):
     cor = models.CharField(max_length=40)
     preco = models.DecimalField(max_digits=9, decimal_places=2)
     ano = models.CharField(max_length=40)
-    descricao = models.CharField(max_length=40)
+    descricao = models.CharField(max_length=300)
     foto = models.ImageField(upload_to="fotos/%Y/%m/%d", blank=True)
     publicada = models.BooleanField(default=False)
-    data_fotografia = models.DateTimeField(default=datetime.now, blank=False)
+    data_fotografia = models.DateTimeField(default=datetime.now, blank=True)
     usuarios = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True, blank=False, related_name='user', )
 
     def __str__(self):
