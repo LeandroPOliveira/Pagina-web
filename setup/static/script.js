@@ -12,8 +12,8 @@ setTimeout(() => {
   document.querySelector('#alerta').style.display = 'none'
 }, 5000)
 
+
 function previewImage(input) {
-    console.log('teste')
     var preview = document.getElementById('foto-preview');
     if (input.files && input.files[0]) {
         var reader = new FileReader();

@@ -2,16 +2,19 @@
 {% load static %}
 {% block content %}
 
-<div class="container mt-5">
-    <h1>Adicionar nova Bike</h1>
+<div class="back2">
+<div class="container py-5">
+    <div class="row justify-content-center">
+    <div class="col-md-6 p-5 bg-light rounded">
+    <h1 class="text-center">Adicionar nova Bike</h1>
     <form action="{% url 'nova_bike' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form.visible_fields %}
-        <div class="col-12 col-lg-12" style="margin-bottom: 10px;">
+        <div class="" style="margin-bottom: 10px;">
             {% if field.name == 'foto' %}
             <label for="{{ field.id_for_label }}" style="margin-bottom: 5px;">{{field.label}}</label>
             {{ field }}
-            <img id="foto-preview" src="#" alt="Selected Image" class="mt-2" style="width: 300px;">
+            <img id="foto-preview" src="{% static 'img/default.jpg' %}" alt="Selected Image" class="mt-2" style="max-width: 100%;">
             {% else %}
             <label for="{{ field.id_for_label }}" style="margin-bottom: 5px;">{{field.label}}</label>
             {{ field }}
@@ -21,6 +24,9 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+        </div>
+        </div>
 </div>
+    </div>
 
 {% endblock %}
