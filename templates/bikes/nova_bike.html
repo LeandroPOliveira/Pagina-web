@@ -6,7 +6,7 @@
 <div class="container py-5">
     <div class="row justify-content-center">
     <div class="col-md-6 p-5 bg-light rounded">
-    <h1 class="text-center">Adicionar nova Bike</h1>
+    <h1 class="text-center h3">Adicionar nova Bike</h1>
     <form action="{% url 'nova_bike' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form.visible_fields %}
