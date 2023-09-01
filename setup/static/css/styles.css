@@ -154,3 +154,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.cadastro-fundo {
+    background-image: url("/static/img/back2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
