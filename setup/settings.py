@@ -35,8 +35,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'cloudinary_storage',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bikes.apps.BikesConfig',
     'usuarios.apps.UsuariosConfig',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -122,12 +119,12 @@ USE_I18N = True
 USE_TZ = True
 
 # Cloudinary
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': str(os.getenv('CLOUD_NAME')),
-    'API_KEY': str(os.getenv('API_KEY')),
-    'API_SECRET': str(os.getenv('API_SECRET'))
-}
+#
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': str(os.getenv('CLOUD_NAME')),
+#     'API_KEY': str(os.getenv('API_KEY')),
+#     'API_SECRET': str(os.getenv('API_SECRET'))
+# }
 
 THOUSAND_SEPARATOR = '.',
 
