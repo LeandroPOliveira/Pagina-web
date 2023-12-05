@@ -4,10 +4,10 @@
 
 ### Descrição:
 
-Projeto Full Stack em desenvolvimento com objetivo de aprofundar os conhecimentos em desenvolvimento web com Flask.<br>
+Projeto Full Stack em desenvolvimento com objetivo de aprofundar os conhecimentos em desenvolvimento web com Django.<br>
 -Front-end desenvolvido com Bootstrap;<br>
--Funcionalidades estão sendo implementadas com Flask;<br>
--Banco de dados no PostgreSQL, deploy já realizado no Render.com.<br>
+-Funcionalidades estão sendo implementadas com Django;<br>
+-Banco de dados SQLite, deploy já realizado no Pythonanywhere.<br>
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
 ![](https://github.com/LeandroPOliveira/Pagina-web/blob/main/screen.png?raw=true)
@@ -20,9 +20,9 @@ Projeto Full Stack em desenvolvimento com objetivo de aprofundar os conhecimento
 
 ### Description:
 
-Full Stack project in development aiming to deepen knowledge of web development with Flask.<br>
+Full Stack project in development aiming to deepen knowledge of web development with Django.<br>
 -Front-end developed with Bootstrap;<br>
--New features are being implemented with Flask;<br>
--Database with PostgreSQL, deploy on render.com.<br>
+-New features are being implemented with Django;<br>
+-Database with SQLite, deploy on Pythonanywhere.<br>
 
 
