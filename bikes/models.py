@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 
 class Bikes(models.Model):
 
+    class Meta:
+        verbose_name_plural = 'produtos'
+
     OPCOES_CATEGORIA = [
         ('MOUNTAIN', "Mountain"),
         ('ROAD', 'Road'),
