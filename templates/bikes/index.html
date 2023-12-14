@@ -88,12 +88,12 @@
         {% if cards %}
         {% for bike in cards %}
         <div class="col-md-6 col-xl-4">
-            <div class="card border-0 mx-3 mb-3">
+            <div class="card border border-primary rounded mx-3 mb-3">
                 <a href="{% url 'detalhes_bike' bike.id %}">
                     {% if bike.foto == "" or bike.foto == null %}
                     <img class='card-img-top' src="{% static '/img/not-found.jpg' %}">
                     {% else %}
-                    <img class="object-fit-cover" src="{{bike.foto.url}}" height="250px" width="300px">
+                    <img class="img-fluid w-100" src="{{bike.foto.url}}">
                     {% endif %}
                 </a>
                 <div class="card-body">
