@@ -5,9 +5,9 @@ from bikes.forms import BikesForms
 
 
 def index(request):
-    if not request.user.is_authenticated:
-        messages.error(request, 'Usuário não logado')
-        return redirect('login')
+    # if not request.user.is_authenticated:
+    #     messages.error(request, 'Usuário não logado')
+    #     return redirect('login')
 
     bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True)
     titulo = 'Trokabike'

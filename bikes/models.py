@@ -12,6 +12,7 @@ class Bikes(models.Model):
         ('MOUNTAIN', "Mountain"),
         ('ROAD', 'Road'),
         ('GRAVEL', 'Gravel'),
+        ('VESTUARIO', 'Vestuario')
     ]
 
     nome = models.CharField(max_length=50, null=False, blank=False)
