@@ -4,6 +4,7 @@ from django.contrib import messages
 from bikes.forms import BikesForms
 
 
+
 def index(request):
     # if not request.user.is_authenticated:
     #     messages.error(request, 'Usuário não logado')
@@ -44,4 +45,14 @@ def filtro(request, categoria):
 def detalhes_bike(request, bike_id):
     bike = get_object_or_404(Bikes, pk=bike_id)
     return render(request, 'bikes/detalhes_bike.html', {'bike': bike})
+
+
+def add_carrinho(request):
+    cart = Cart(request)
+    if request.POST.get('action') == 'post':
+        product_id = int(request.POST.get('product_id'))
+        product = get_object_or_404(Bikes, id=product_id)
+        cart.add(product=product)
+        responce = JsonResponse({'Product Name': product.nome})
+        return responce
 
