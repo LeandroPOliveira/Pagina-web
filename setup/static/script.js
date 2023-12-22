@@ -25,3 +25,29 @@ function previewImage(input) {
         preview.src = "#";
     }
 }
+
+$(document).on('click', '#add-cart', function(e){
+    console.log('Click event triggered');
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '{% url "cart_adicionar" %}',
+        data: {
+    product_id: $('#add-cart').val(),
+//    product_qty: $('#qty-cart option:selected').text(),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
+        },
+
+        success: function(json){
+            console.log(json),
+            document.getElementById("cart_quantity").textContent = json.qty
+        },
+
+        error: function(xhr, errmsg, err){
+
+        }
+
+    });
+
+})

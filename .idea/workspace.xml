@@ -5,16 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c121e1bd-5181-45ab-9e21-a66e0b4f0263" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bikes/cart.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bikes/context_processors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cart/cart_sumario.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bikes/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bikes/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/context_processors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bikes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bikes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/setup/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/setup/static/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/setup/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/setup/static/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bikes/detalhes_bike.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/detalhes_bike.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bikes/editar_bike.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/editar_bike.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bikes/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -52,6 +59,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\leand\PycharmProjects\trokabike\cart" />
       <recent name="C:\Users\leand\PycharmProjects\Pagina-web\templates\bikes" />
     </key>
   </component>
