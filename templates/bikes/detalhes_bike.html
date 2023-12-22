@@ -13,7 +13,8 @@
                 <p class="">{{bike.cor}}</p>
                 <p class="">{{bike.preco}}</p>
                 <p class="">{{bike.descricao}}</p>
-                <button type="button" class="btn btn-secondary" value="{{ bike.id }}" id="add-cart">Add carrinho</button>
+                <button type="button" class="btn btn-secondary" value="{{ bike.id }}" id="add-cart" data-add-url="{% url 'cart_adicionar' %}">Add carrinho</button>
+
             </div>
         </div>
     </div>
