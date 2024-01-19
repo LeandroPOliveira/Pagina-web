@@ -13,7 +13,18 @@
                 <p><strong>Cor:</strong> {{ bike.cor }}</p>
                 <p><strong>Preço:</strong> {{ bike.preco }}</p>
                 <p><strong>Descrição:</strong> {{ bike.descricao }}</p>
-                <button type="button" class="btn btn-secondary mt-3" value="{{ bike.id }}" id="add-cart" data-add-url="{% url 'cart_adicionar' %}">Add carrinho</button>
+                <div class="col-md-2">Quantity:</div>
+
+                <select class="form-select form-select-sm" id="qty-cart">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <button type="button" value="{{ bike.id }}" class="btn btn-secondary" id="add-cart">Add To Cart</button>
+            </div>
+
             </div>
         </div>
     </div>

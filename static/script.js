@@ -1,27 +1,31 @@
 $(document).on('click', '#add-cart', function(e){
-    console.log('Click event triggered');
     e.preventDefault();
-
-    // Get the URL from the data attribute
-    var addUrl = $(this).data('add-url');
-
     $.ajax({
         type: 'POST',
-        url: addUrl,
+        url: '{% url 'cart_adicionar' %}',
         data: {
-            product_id: $(this).val(),
-            csrfmiddlewaretoken: '{{ csrf_token }}',
-            action: 'post'
+    product_id: $('#add-cart').val(),
+    product_qty: $('#qty-cart option:selected').text(),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
         },
+
         success: function(json){
-            console.log(json);
-            document.getElementById("cart_quantity").textContent = json.qty;
+            //console.log(json)
+            document.getElementById("cart_quantity").textContent = json.qty
+            location.reload();
         },
+
         error: function(xhr, errmsg, err){
-            // Handle error
+
         }
+
+
     });
-});
+
+
+
+})
 
 
 
