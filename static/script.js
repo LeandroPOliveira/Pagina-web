@@ -1,13 +1,15 @@
 $(document).on('click', '#add-cart', function(e){
     e.preventDefault();
+    var cartUrl = $(this).data('cart-url');
+
     $.ajax({
         type: 'POST',
-        url: '{% url 'cart_adicionar' %}',
+        url: cartUrl,
         data: {
-    product_id: $('#add-cart').val(),
-    product_qty: $('#qty-cart option:selected').text(),
-    csrfmiddlewaretoken: '{{ csrf_token }}',
-    action: 'post'
+            product_id: $('#add-cart').val(),
+            product_qty: $('#qty-cart option:selected').text(),
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            action: 'post'
         },
 
         success: function(json){
@@ -19,14 +21,8 @@ $(document).on('click', '#add-cart', function(e){
         error: function(xhr, errmsg, err){
 
         }
-
-
     });
-
-
-
 })
-
 
 
 const root = document.documentElement;

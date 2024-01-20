@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .cart import Cart
 from bikes.models import Bikes
 from django.http import JsonResponse
+from django.contrib import messages
 
 
 def cart_sumario(request):
@@ -15,7 +16,7 @@ def cart_adicionar(request):
     if request.POST.get('action') == 'post':
         # Get stuff
         product_id = int(request.POST.get('product_id'))
-        # product_qty = int(request.POST.get('product_qty'))
+        product_qty = int(request.POST.get('product_qty'))
         print(product_id)
         # lookup product in DB
         product = get_object_or_404(Product, id=product_id)
@@ -24,7 +25,7 @@ def cart_adicionar(request):
         cart.add(product=product)
 
         # Get Cart Quantity
-        # cart_quantity = cart.__len__()
+        cart_quantity = cart.__len__()
 
         # Return resonse
         # response = JsonResponse({'Product Name: ': product.name})
