@@ -1,3 +1,5 @@
+from bikes.models import Bikes
+
 class Cart:
     def __init__(self, request):
         self.session = request.session
@@ -9,13 +11,26 @@ class Cart:
 
         self.cart = cart
 
-    def add(self, product):
+    def add(self, product, quantity):
         product_id = str(product.id)
-
+        product_qty = str(quantity)
         if product_id in self.cart:
             pass
         else:
-            self.cart[product_id] = {'price': str(product.preco)}
+            self.cart[product_id] = int(product_qty)
 
         self.session.modified = True
 
+    def __len__(self):
+        return len(self.cart)
+
+    def pega_produto(self):
+        produtos_id = self.cart.keys()
+        produtos = Bikes.objects.filter(id__in=produtos_id)
+
+        return produtos
+
+    def pega_quantidade(self):
+        quantidade = self.cart
+        return quantidade
+        

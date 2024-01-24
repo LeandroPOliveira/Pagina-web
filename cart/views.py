@@ -6,7 +6,10 @@ from django.contrib import messages
 
 
 def cart_sumario(request):
-    return render(request, 'cart_sumario.html', {})
+    cart = Cart(request)
+    cart_produtos = cart.pega_produto
+    quantidade = cart.pega_quantidade
+    return render(request, 'cart_sumario.html', {'cart_produtos': cart_produtos, 'quantidade': quantidade})
 
 
 def cart_adicionar(request):
@@ -17,12 +20,12 @@ def cart_adicionar(request):
         # Get stuff
         product_id = int(request.POST.get('product_id'))
         product_qty = int(request.POST.get('product_qty'))
-        print(product_id)
+
         # lookup product in DB
-        product = get_object_or_404(Product, id=product_id)
+        product = get_object_or_404(Bikes, id=product_id)
 
         # Save to session
-        cart.add(product=product)
+        cart.add(product=product, quantity=product_qty)
 
         # Get Cart Quantity
         cart_quantity = cart.__len__()

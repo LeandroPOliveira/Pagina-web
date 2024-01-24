@@ -1,30 +1,3 @@
-$(document).on('click', '#add-cart', function(e){
-    e.preventDefault();
-    var cartUrl = $(this).data('cart-url');
-
-    $.ajax({
-        type: 'POST',
-        url: cartUrl,
-        data: {
-            product_id: $('#add-cart').val(),
-            product_qty: $('#qty-cart option:selected').text(),
-            csrfmiddlewaretoken: '{{ csrf_token }}',
-            action: 'post'
-        },
-
-        success: function(json){
-            //console.log(json)
-            document.getElementById("cart_quantity").textContent = json.qty
-            location.reload();
-        },
-
-        error: function(xhr, errmsg, err){
-
-        }
-    });
-})
-
-
 const root = document.documentElement;
 const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
 const marqueeContent = document.querySelector("ul.marquee-content");
