@@ -33,4 +33,16 @@ class Cart:
     def pega_quantidade(self):
         quantidade = self.cart
         return quantidade
-        
+
+    def atualizar(self, produto, quantidade):
+        produto_id = str(produto)
+        produto_qtd = int(quantidade)
+
+        carrinho = self.cart
+
+        carrinho[produto_id] = produto_qtd
+
+        self.session.modified = True
+
+        retorno = self.cart
+        return retorno

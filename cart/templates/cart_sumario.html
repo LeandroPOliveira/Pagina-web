@@ -7,8 +7,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shopping Cart</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">View Your Cart...</p>
+                    <h1 class="display-4 fw-bolder">Carrinho</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Veja seu carrinho...</p>
                 </div>
             </div>
         </header>
@@ -86,12 +86,43 @@
 
             <br/><br/><br/>
         	{% else %}
-        	There's Nothing In Your Cart...
+        	Não há nada no seu carrinho...
         	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         {% endif %}
     	</div>
 
+<script>
+    // Check if button pressed
+$(document).on('click', '.update-cart', function(e){
+    e.preventDefault();
+    var productid = $(this).data('index');
+    $.ajax({
+        type: 'POST',
+        url: '{% url "cart_atualizar" %}',
 
+        data: {
+    product_id: $(this).data('index'),
+    product_qty: $('#select' + productid + ' option:selected').text(),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
+        },
+
+        success: function(json){
+            location.reload();
+        },
+
+        error: function(xhr, errmsg, err){
+
+        }
+
+
+    });
+
+
+
+})
+
+</script>
 
 
 {% endblock %}
