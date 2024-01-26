@@ -9,7 +9,8 @@ def cart_sumario(request):
     cart = Cart(request)
     cart_produtos = cart.pega_produto
     quantidade = cart.pega_quantidade
-    return render(request, 'cart_sumario.html', {'cart_produtos': cart_produtos, 'quantidade': quantidade})
+    totais = cart.cart_total()
+    return render(request, 'cart_sumario.html', {'cart_produtos': cart_produtos, 'quantidade': quantidade, 'totais': totais})
 
 
 def cart_adicionar(request):
@@ -38,7 +39,15 @@ def cart_adicionar(request):
 
 
 def cart_deletar(request):
-    pass
+    cart = Cart(request)
+    if request.POST.get('action') == 'post':
+        # Get stuff
+        product_id = int(request.POST.get('product_id'))
+        cart.deletar(produto=product_id)
+        response = JsonResponse({'product': product_id})
+        messages.success(request, ("Item Deleted From Shopping Cart..."))
+        return response
+
 
 
 def cart_atualizar(request):
@@ -51,6 +60,7 @@ def cart_atualizar(request):
         cart.atualizar(produto=product_id, quantidade=product_qty)
 
         response = JsonResponse({'qty': product_qty})
+        messages.success(request, ("Seu carrinho foi atualizado..."))
         return response
         # return redirect('cart_sumario')
 

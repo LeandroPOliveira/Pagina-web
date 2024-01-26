@@ -46,3 +46,25 @@ class Cart:
 
         retorno = self.cart
         return retorno
+
+    def deletar(self, produto):
+        produto_id = str(produto)
+        if produto_id in self.cart:
+            del self.cart[produto_id]
+
+        self.session.modified = True
+
+    def cart_total(self):
+        produtos_id = self.cart.keys()
+        products = Bikes.objects.filter(id__in=produtos_id)
+        quantidade = self.cart
+        total = 0
+        for key, value in quantidade.items():
+            key = int(key)
+            for product in products:
+                if product.id == key:
+                    total = total + (product.preco * value)
+
+        return total
+
+

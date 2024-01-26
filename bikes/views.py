@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from bikes.models import Bikes
 from django.contrib import messages
 from bikes.forms import BikesForms
-
+import datetime
 
 def index(request):
     # if not request.user.is_authenticated:
@@ -11,7 +11,9 @@ def index(request):
 
     bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True)
     titulo = 'Trokabike'
-    return render(request, 'bikes/index.html', {'cards': bikes, 'titulo': titulo})
+    ano = datetime.date.today().year
+    print(ano)
+    return render(request, 'bikes/index.html', {'cards': bikes, 'titulo': titulo, 'ano': ano})
 
 
 def nova_bike(request):

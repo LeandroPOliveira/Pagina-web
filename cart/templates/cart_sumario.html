@@ -38,15 +38,15 @@
 
                 <!-- Product price-->
                 <strike>
-                ${{ produto.price }}
+                ${{ produto.preco }}
                 </strike>
                 &nbsp;
-                ${{ produto.sale_price }}
+                ${{ produto.sale_preco }}
 
 
 
         {% else %}
-            ${{ produto.price }}
+            ${{ produto.preco }}
 
         {% endif %}
             <br/><br/>
@@ -82,7 +82,7 @@
 
 
         	{% endfor %}
-            <h3>Total: ${{ totals }}</h3>
+            <h3>Total: ${{ totais }}</h3>
 
             <br/><br/><br/>
         	{% else %}
@@ -121,6 +121,36 @@ $(document).on('click', '.update-cart', function(e){
 
 
 })
+
+ // Check if button pressed
+$(document).on('click', '.delete-product', function(e){
+    e.preventDefault();
+
+    $.ajax({
+        type: 'POST',
+        url: '{% url "cart_deletar" %}',
+
+        data: {
+    product_id: $(this).data('index'),
+    csrfmiddlewaretoken: '{{ csrf_token }}',
+    action: 'post'
+        },
+
+        success: function(json){
+            location.reload();
+        },
+
+        error: function(xhr, errmsg, err){
+
+        }
+
+
+    });
+
+
+
+})
+
 
 </script>
 
