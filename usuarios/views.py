@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from usuarios.forms import LoginForms, CadastroForms
+from usuarios.forms import LoginForms, CadastroForms, PerfilForms
 from django.contrib import auth, messages
 from django.contrib.auth.models import User
 
@@ -51,6 +51,16 @@ def cadastro(request):
             return redirect('login')
 
     return render(request, 'usuarios/cadastro.html', {'form': form})
+
+
+def perfil(request):
+    if request.user.is_authenticated:
+        usuario_atual = User.objects.get(id=request.user.id)
+        form_usuario = PerfilForms(request.POST or None, instance=usuario_atual)
+
+        if request.method == 'POST':
+            form = PerfilForms(request.POST)
+        return render(request, 'usuarios/perfil.html', {'form': form_usuario})
 
 
 def logout(request):

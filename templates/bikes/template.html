@@ -52,6 +52,7 @@
                     {% if request.user.is_authenticated %}
                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'nova_bike' %}">Anunciar</a>
                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'logout' %}">Logout</a>
+                    <a class="nav-link btn-primary me-3 btn-login" href="{% url 'perfil' %}">Perfil</a>
                     {% else %}
                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'cadastro' %}">Cadastrar</a>
                     <a class="nav-link btn-primary me-3 btn-login" href="{% url 'login' %}">Login</a>

@@ -54,3 +54,18 @@ class CadastroForms(forms.Form):
                 raise forms.ValidationError('Senhas não são iguais')
             else:
                 return senha_2
+
+
+class PerfilForms(forms.Form):
+    nome_cadastro = forms.CharField(label="Nome de Cadastro",
+                                    required=True,
+                                    max_length=100,
+                                    widget=forms.TextInput(
+                                        attrs={'class': 'form-control', "placeholder": 'Ex. José da Silva'}))
+
+    email = forms.CharField(label="Email",
+                            required=True,
+                            max_length=100,
+                            widget=forms.EmailInput(
+                                attrs={'class': 'form-control', "placeholder": 'Ex. jose@mail.com'}))
+
