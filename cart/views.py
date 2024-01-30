@@ -26,7 +26,7 @@ def cart_adicionar(request):
         product = get_object_or_404(Bikes, id=product_id)
 
         # Save to session
-        cart.add(product=product, quantity=product_qty)
+        cart.adicionar(product=product, quantity=product_qty)
 
         # Get Cart Quantity
         cart_quantity = cart.__len__()
@@ -34,33 +34,30 @@ def cart_adicionar(request):
         # Return resonse
         # response = JsonResponse({'Product Name: ': product.name})
         response = JsonResponse({'qty': cart_quantity})
-        messages.success(request, ("Product Added To Cart..."))
+        messages.success(request, ("Produto adicionado ao carrinho!"))
         return response
 
 
 def cart_deletar(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
-        # Get stuff
         product_id = int(request.POST.get('product_id'))
         cart.deletar(produto=product_id)
         response = JsonResponse({'product': product_id})
-        messages.success(request, ("Item Deleted From Shopping Cart..."))
+        messages.success(request, ("Item removido do carrinho!"))
         return response
-
 
 
 def cart_atualizar(request):
     cart = Cart(request)
     if request.POST.get('action') == 'post':
-        # Get stuff
+
         product_id = int(request.POST.get('product_id'))
         product_qty = int(request.POST.get('product_qty'))
 
         cart.atualizar(produto=product_id, quantidade=product_qty)
-
         response = JsonResponse({'qty': product_qty})
-        messages.success(request, ("Seu carrinho foi atualizado..."))
+        messages.success(request, ("Seu carrinho foi atualizado!"))
         return response
         # return redirect('cart_sumario')
 

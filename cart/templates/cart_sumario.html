@@ -92,65 +92,45 @@
     	</div>
 
 <script>
-    // Check if button pressed
+// atualizar carrinho
 $(document).on('click', '.update-cart', function(e){
     e.preventDefault();
     var productid = $(this).data('index');
     $.ajax({
         type: 'POST',
         url: '{% url "cart_atualizar" %}',
-
         data: {
     product_id: $(this).data('index'),
     product_qty: $('#select' + productid + ' option:selected').text(),
     csrfmiddlewaretoken: '{{ csrf_token }}',
     action: 'post'
         },
-
         success: function(json){
             location.reload();
         },
-
         error: function(xhr, errmsg, err){
-
         }
-
-
     });
-
-
-
 })
 
- // Check if button pressed
+// deletar produto
 $(document).on('click', '.delete-product', function(e){
     e.preventDefault();
-
     $.ajax({
         type: 'POST',
         url: '{% url "cart_deletar" %}',
-
         data: {
     product_id: $(this).data('index'),
     csrfmiddlewaretoken: '{{ csrf_token }}',
     action: 'post'
         },
-
         success: function(json){
             location.reload();
         },
-
         error: function(xhr, errmsg, err){
-
         }
-
-
     });
-
-
-
 })
-
 
 </script>
 

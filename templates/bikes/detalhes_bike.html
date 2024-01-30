@@ -28,7 +28,6 @@
         </div>
     </div>
 
-
 <script>
 // Check if button pressed
 $(document).on('click', '#add-cart', function(e){
@@ -36,33 +35,21 @@ $(document).on('click', '#add-cart', function(e){
     $.ajax({
         type: 'POST',
         url: '{% url "cart_adicionar" %}',
-
         data: {
     product_id: $(this).val(),
     product_qty: $('#qty-cart option:selected').text(),
     csrfmiddlewaretoken: '{{ csrf_token }}',
     action: 'post'
         },
-
         success: function(json){
             console.log(json);
             document.getElementById('cart_quantity').textContent = json.qty
             location.reload();
         },
-
         error: function(xhr, errmsg, err){
-
         }
-
-
     });
-
-
-
 })
-
-
-
 
 </script>
 

@@ -4,6 +4,7 @@ from django.contrib import messages
 from bikes.forms import BikesForms
 import datetime
 
+
 def index(request):
     # if not request.user.is_authenticated:
     #     messages.error(request, 'Usuário não logado')
@@ -12,7 +13,6 @@ def index(request):
     bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True)
     titulo = 'Trokabike'
     ano = datetime.date.today().year
-    print(ano)
     return render(request, 'bikes/index.html', {'cards': bikes, 'titulo': titulo, 'ano': ano})
 
 
@@ -30,7 +30,6 @@ def nova_bike(request):
             return redirect('index')
         else:
             print(form.errors.as_data())
-
     return render(request, 'bikes/nova_bike.html', {'form': form})
 
 

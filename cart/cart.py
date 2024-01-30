@@ -1,5 +1,6 @@
 from bikes.models import Bikes
 
+
 class Cart:
     def __init__(self, request):
         self.session = request.session
@@ -11,7 +12,7 @@ class Cart:
 
         self.cart = cart
 
-    def add(self, product, quantity):
+    def adicionar(self, product, quantity):
         product_id = str(product.id)
         product_qty = str(quantity)
         if product_id in self.cart:
