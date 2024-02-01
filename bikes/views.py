@@ -16,23 +16,6 @@ def index(request):
     return render(request, 'bikes/index.html', {'cards': bikes, 'titulo': titulo, 'ano': ano})
 
 
-def nova_bike(request):
-    if not request.user.is_authenticated:
-        messages.error(request, 'Usuário não logado')
-        return redirect('login')
-
-    form = BikesForms()
-    if request.method == 'POST':
-        form = BikesForms(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Nova bicicleta cadastrada!')
-            return redirect('index')
-        else:
-            print(form.errors.as_data())
-    return render(request, 'bikes/nova_bike.html', {'form': form})
-
-
 def editar_bike(request):
     return render(request, 'bikes/editar_bike.html')
 
