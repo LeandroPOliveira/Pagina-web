@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
-from usuarios.forms import LoginForms, CadastroForm, PerfilForm, NovaSenhaForm
+from usuarios.forms import LoginForms, CadastroForm, PerfilForm, NovaSenhaForm, UserInfoForm
 from django.contrib import auth, messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from .models import Profile
 
 
 def login(request):
@@ -59,15 +60,18 @@ def cadastro(request):
 def perfil(request):
     if request.user.is_authenticated:
         current_user = User.objects.get(id=request.user.id)
+        current_profile = Profile.objects.get(usuario__id=request.user.id)
         user_form = PerfilForm(request.POST or None, instance=current_user)
+        perfil_form = UserInfoForm(request.POST or None, instance=current_profile)
 
-        if user_form.is_valid():
+        if user_form.is_valid() and perfil_form.is_valid():
             user_form.save()
+            perfil_form.save()
 
             login(request)
             messages.success(request, "User Has Been Updated!!")
             return redirect('index')
-        return render(request, "usuarios/perfil.html", {'user_form': user_form})
+        return render(request, "usuarios/perfil.html", {'user_form': user_form, 'perfil_form': perfil_form})
     else:
         messages.success(request, "You Must Be Logged In To Access That Page!!")
         return redirect('index')

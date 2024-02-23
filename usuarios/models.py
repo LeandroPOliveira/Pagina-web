@@ -3,6 +3,7 @@ import datetime
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
+
 class Profile(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     data_modificacao = models.DateTimeField(User, auto_now=True)

@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, SetPasswordForm
 from django import forms
+from .models import Profile
 
 
 class LoginForms(forms.Form):
@@ -115,6 +116,17 @@ class PerfilForm(UserChangeForm):
         self.fields['username'].label = ''
         self.fields[
             'username'].help_text = '<span class="form-text text-muted"><small>Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small></span>'
+
+
+class UserInfoForm(forms.ModelForm):
+    telefone = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Phone'}), required=False)
+    endereco = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Address 1'}), required=False)
+    cidade = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'City'}), required=False)
+    cep = forms.CharField(label="", widget=forms.TextInput(attrs={'class':'form-control', 'placeholder':'Zipcode'}), required=False)
+
+    class Meta:
+        model = Profile
+        fields = ('telefone', 'endereco', 'cidade', 'cep')
 
 
 class NovaSenhaForm(SetPasswordForm):
