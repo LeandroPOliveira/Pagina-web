@@ -11,6 +11,7 @@ class Profile(models.Model):
     endereco = models.CharField(max_length=200, blank=True)
     cidade = models.CharField(max_length=200, blank=True)
     cep = models.CharField(max_length=200, blank=True)
+    old_cart = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.usuario.username
