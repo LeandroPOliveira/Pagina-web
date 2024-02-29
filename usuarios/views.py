@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from .models import Profile
+import json
+from cart.cart import Cart
 
 
 def login(request):
@@ -19,6 +21,17 @@ def login(request):
             usuario = auth.authenticate(request, username=nome, password=senha)
             if usuario is not None:
                 auth.login(request, usuario)
+
+                usuario_atual = Profile.objects.get(usuario__id=request.user.id)
+
+                cart_salvo = usuario_atual.old_cart
+                if cart_salvo:
+                    cart_convertido = json.loads(cart_salvo)
+                    cart = Cart(request)
+
+                    for key, value in cart_convertido.items():
+                        cart.db_add(product=key, quantity=value)
+
                 messages.success(request, f'{nome} logado com sucesso!')
                 return redirect('index')
             else:
