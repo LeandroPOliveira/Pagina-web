@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bikes.apps.BikesConfig',
     'usuarios.apps.UsuariosConfig',
     'cart.apps.CartConfig',
+    'payment',
 ]
 
 MIDDLEWARE = [
