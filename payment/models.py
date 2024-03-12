@@ -5,17 +5,17 @@ from django.contrib.auth.models import User
 class Endereco(models.Model):
 
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    shipping_email = models.CharField(max_length=255)
-    shipping_address1 = models.CharField(max_length=255)
-    shipping_address2 = models.CharField(max_length=255)
-    shipping_city = models.CharField(max_length=255)
-    shipping_state = models.CharField(max_length=255, null=True, blank=True)
-    shipping_zipcode = models.CharField(max_length=255, null=True, blank=True)
-    shipping_country = models.CharField(max_length=255)
+    email_envio = models.CharField(max_length=255)
+    endereco_envio = models.CharField(max_length=255)
+    endereco_envio2 = models.CharField(max_length=255)
+    cidade_envio = models.CharField(max_length=255)
+    estado_envio = models.CharField(max_length=255, null=True, blank=True)
+    cep_envio = models.CharField(max_length=255, null=True, blank=True)
+    pais_envio = models.CharField(max_length=255)
 
     # Don't pluralize address
     class Meta:
-        verbose_name_plural = "Shipping Address"
+        verbose_name_plural = "Endereço Entrega"
 
     def __str__(self):
-        return f'Shipping Address - {str(self.id)}'
+        return f'Endereço Entrega - {str(self.id)}'

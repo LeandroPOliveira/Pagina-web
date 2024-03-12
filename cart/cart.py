@@ -48,7 +48,6 @@ class Cart:
             carty = carty.replace("\'", "\"")
             current_user.update(old_cart=carty)
 
-
     def __len__(self):
         return len(self.cart)
 
@@ -81,8 +80,6 @@ class Cart:
         retorno = self.cart
         return retorno
 
-
-
     def deletar(self, produto):
         produto_id = str(produto)
         if produto_id in self.cart:
@@ -96,7 +93,6 @@ class Cart:
             carty = str(self.cart)
             carty = carty.replace("\'", "\"")
             current_user.update(old_cart=carty)
-
 
     def cart_total(self):
         produtos_id = self.cart.keys()
