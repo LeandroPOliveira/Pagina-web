@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from .models import Profile
+from payment.forms import EnderecoForm
+from payment.models import Endereco
 import json
 from cart.cart import Cart
 
@@ -75,7 +77,9 @@ def perfil(request):
         current_user = User.objects.get(id=request.user.id)
         current_profile = Profile.objects.get(usuario__id=request.user.id)
         user_form = PerfilForm(request.POST or None, instance=current_user)
+        usuario_envio = Endereco.objects.get(usuario__id=request.user.id)
         perfil_form = UserInfoForm(request.POST or None, instance=current_profile)
+        endereco_form = EnderecoForm(request.POST or None, instance=usuario_envio)
 
         if user_form.is_valid() and perfil_form.is_valid():
             user_form.save()
@@ -84,7 +88,7 @@ def perfil(request):
             login(request)
             messages.success(request, "User Has Been Updated!!")
             return redirect('index')
-        return render(request, "usuarios/perfil.html", {'user_form': user_form, 'perfil_form': perfil_form})
+        return render(request, "usuarios/perfil.html", {'user_form': user_form, 'perfil_form': perfil_form, 'endereco_form': endereco_form})
     else:
         messages.success(request, "You Must Be Logged In To Access That Page!!")
         return redirect('index')

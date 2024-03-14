@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 
 class Endereco(models.Model):
-
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     email_envio = models.CharField(max_length=255)
     endereco_envio = models.CharField(max_length=255)
