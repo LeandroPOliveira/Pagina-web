@@ -5,6 +5,10 @@ from django.db.models.signals import post_save
 
 
 class Profile(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Perfil'
+
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     data_modificacao = models.DateTimeField(User, auto_now=True)
     telefone = models.CharField(max_length=20, blank=True)

@@ -76,9 +76,11 @@ def perfil(request):
     if request.user.is_authenticated:
         current_user = User.objects.get(id=request.user.id)
         current_profile = Profile.objects.get(usuario__id=request.user.id)
+
         user_form = PerfilForm(request.POST or None, instance=current_user)
-        usuario_envio = Endereco.objects.get(usuario__id=request.user.id)
         perfil_form = UserInfoForm(request.POST or None, instance=current_profile)
+
+        usuario_envio = Endereco.objects.get(usuario__id=request.user.id)
         endereco_form = EnderecoForm(request.POST or None, instance=usuario_envio)
 
         if user_form.is_valid() and perfil_form.is_valid():

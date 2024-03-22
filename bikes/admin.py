@@ -12,3 +12,4 @@ class ListandoBikes(admin.ModelAdmin):
 
 
 admin.site.register(Bikes, ListandoBikes)
+
