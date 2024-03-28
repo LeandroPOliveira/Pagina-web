@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c121e1bd-5181-45ab-9e21-a66e0b4f0263" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/payment/templates/checkout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bikes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/bikes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bikes/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/bikes/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bikes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/bikes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bikes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/bikes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/templates/cart_sumario.html" beforeDir="false" afterPath="$PROJECT_DIR$/cart/templates/cart_sumario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/templates/pagamento_sucesso.html" beforeDir="false" afterPath="$PROJECT_DIR$/payment/templates/pagamento_sucesso.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/setup/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/setup/static/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bikes/detalhes_bike.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/detalhes_bike.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bikes/editar_bike.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/editar_bike.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bikes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/bikes/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bikes/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/partials/_alertas.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/_alertas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usuarios/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usuarios/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usuarios/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usuarios/perfil.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>

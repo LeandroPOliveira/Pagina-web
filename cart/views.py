@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .cart import Cart
-from bikes.models import Bikes
+from bikes.models import Produto
 from django.http import JsonResponse
 from django.contrib import messages
 
@@ -23,7 +23,7 @@ def cart_adicionar(request):
         product_qty = int(request.POST.get('product_qty'))
 
         # lookup product in DB
-        product = get_object_or_404(Bikes, id=product_id)
+        product = get_object_or_404(Produto, id=product_id)
 
         # Save to session
         cart.adicionar(product=product, quantity=product_qty)

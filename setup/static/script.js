@@ -33,3 +33,9 @@ function previewImage(input) {
     }
 }
 
+document.querySelector('nav-link').onclick = function(e) {
+    e.preventDefault();
+    console.log('teste')
+    var href = document.querySelector('#teste').href;
+    window.location = href;
+}

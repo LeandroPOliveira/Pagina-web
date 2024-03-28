@@ -1,4 +1,4 @@
-from bikes.models import Bikes
+from bikes.models import Produto
 from usuarios.models import Profile
 
 
@@ -53,7 +53,7 @@ class Cart:
 
     def pega_produto(self):
         produtos_id = self.cart.keys()
-        produtos = Bikes.objects.filter(id__in=produtos_id)
+        produtos = Produto.objects.filter(id__in=produtos_id)
 
         return produtos
 
@@ -96,7 +96,7 @@ class Cart:
 
     def cart_total(self):
         produtos_id = self.cart.keys()
-        products = Bikes.objects.filter(id__in=produtos_id)
+        products = Produto.objects.filter(id__in=produtos_id)
         quantidade = self.cart
         total = 0
         for key, value in quantidade.items():

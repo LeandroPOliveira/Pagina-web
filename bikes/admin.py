@@ -1,5 +1,5 @@
 from django.contrib import admin
-from bikes.models import Bikes
+from bikes.models import Produto
 
 
 class ListandoBikes(admin.ModelAdmin):
@@ -11,5 +11,5 @@ class ListandoBikes(admin.ModelAdmin):
     list_editable = ('publicada',)
 
 
-admin.site.register(Bikes, ListandoBikes)
+admin.site.register(Produto, ListandoBikes)
 

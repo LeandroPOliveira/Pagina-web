@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Bikes(models.Model):
+class Produto(models.Model):
 
     class Meta:
         verbose_name_plural = 'produtos'

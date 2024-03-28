@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('pagamento-sucesso', views.pagamento_sucesso, name='pagamento_sucesso'),
+    path('checkout', views.checkout, name='checkout'),
 ]

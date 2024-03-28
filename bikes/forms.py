@@ -1,10 +1,11 @@
 from django import forms
-from bikes.models import Bikes
+from bikes.models import Produto
 from datetime import datetime
 
-class BikesForms(forms.ModelForm):
+
+class ProdutoForm(forms.ModelForm):
     class Meta:
-        model = Bikes
+        model = Produto
         exclude = ['publicada', ]
         labels = {
             'descricao': 'Descrição',

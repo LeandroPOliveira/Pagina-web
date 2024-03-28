@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from bikes.models import Bikes
+from bikes.models import Produto
 from django.contrib import messages
-from bikes.forms import BikesForms
+from bikes.forms import ProdutoForm
 import datetime
 
 
@@ -10,7 +10,7 @@ def index(request):
     #     messages.error(request, 'Usuário não logado')
     #     return redirect('login')
 
-    bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True)
+    bikes = Produto.objects.order_by('data_fotografia').filter(publicada=True)
     titulo = 'Trokabike'
     ano = datetime.date.today().year
     return render(request, 'bikes/index.html', {'cards': bikes, 'titulo': titulo, 'ano': ano})
@@ -21,12 +21,12 @@ def editar_bike(request):
 
 
 def filtro(request, categoria):
-    bikes = Bikes.objects.order_by('data_fotografia').filter(publicada=True, categoria=categoria)
+    bikes = Produto.objects.order_by('data_fotografia').filter(publicada=True, categoria=categoria)
     return render(request, 'bikes/index.html', {'cards': bikes})
 
 
 def detalhes_bike(request, bike_id):
-    bike = get_object_or_404(Bikes, pk=bike_id)
+    bike = get_object_or_404(Produto, pk=bike_id)
     return render(request, 'bikes/detalhes_bike.html', {'bike': bike})
 
 

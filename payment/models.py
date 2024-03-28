@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from bikes.models import Bikes
+from bikes.models import Produto
 
 
 class Endereco(models.Model):
@@ -36,7 +36,7 @@ class Pedido(models.Model):
 class ItemPedido(models.Model):
     # Foreign Keys
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, null=True)
-    produto = models.ForeignKey(Bikes, on_delete=models.CASCADE, null=True)
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE, null=True)
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     quantidade = models.PositiveBigIntegerField(default=1)
